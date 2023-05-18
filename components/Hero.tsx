@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Socials from '../components/Socials'
 import HeadlineCard from '../components/HeadlineCard'
-export default function Hero({articles}) {
+export default function Hero({articles} : {articles: any}) {
 
     return (
       <>
