@@ -36,7 +36,7 @@ export default function Home({links}: {links: any}) {
     <div id="foundation">
       <Navbar links={links} />
       <section id="topbox">
-      <Iframe className="bg-video" src="https://player.vimeo.com/video/818970225?h=77fe4aee3e&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1" frameBorder={0} allow="autoplay"/>
+      <Iframe className="bg-video" url="https://player.vimeo.com/video/818970225?h=77fe4aee3e&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1" frameBorder={0} allow="autoplay"/>
         <div className="video-overlay"></div>
         <div id="contents">
             <div id="logo-login">
