@@ -13,10 +13,10 @@ function HeadlineCard({ articles, options }: {articles: any, options: any}) {
               <h2 className='text-primary text-xl uppercase font-bold mt-1 py-2 text-left'>{item.data.title}</h2>
               </div>
               <div className='mx-4 pt-4'>
-              <p className="text-base">{new Date(item.data.date).toLocaleDateString('en-GB', options)}</p>
-              <p className="text-base">{item.data.mins} MIN READ</p>
-              <p className='text-lg font-semibold pt-4 pb-4'>{item.data.blurb}</p>
-              Read More 
+              <p className="text-base text-primary">{new Date(item.data.date).toLocaleDateString('en-GB', options)}</p>
+              <p className="text-base text-primary">{item.data.mins} MIN READ</p>
+              <p className='text-lg text-primary font-semibold pt-4 pb-4'>{item.data.blurb}</p>
+              <p className='text-primary text-base'>Read More</p>
               </div>
         </Link>
       ))}
