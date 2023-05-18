@@ -11,7 +11,8 @@ export default function Document() {
             <Script strategy="beforeInteractive" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></Script>
             <Script strategy="lazyOnload" src="/js/script.js"></Script>
             <Script strategy="lazyOnload" src="/js/scroll-script.js"></Script>
-            <Script src="https://player.vimeo.com/api/player.js"></Script>
+            <Script strategy="lazyOnload" src="https://player.vimeo.com/api/player.js"></Script>
+            <Script strategy="lazyOnload" src="//code.tidio.co/zjoi0ajovrui5txvitkzweydom4tlltp.js"></Script>
       </Head>
       <body>
         <Main />
