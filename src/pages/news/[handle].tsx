@@ -48,7 +48,7 @@ function Article({ article, links, options }: {article:any, links: any, options:
             <div id="pages">
             {!isPreviewing ? <Navbar links={links}/> : ''}
             </div>
-            <div id="builder-comps" className="!max-w-[680px]">
+            <div id="builder-comps" className="!max-w-[680px] px-3 md:px-0">
             <div className="flex justify-between py-2 pt-1 my-0 mb-10 border-b-2">
               <p  className="text-base text-primary font-semibold"><ChevronLeftOutlinedIcon className='pr-[3px] mb-[3px]'/><Link href="/news-home" className="hover:underline">BACK TO NEWS &amp; ARTICLES</Link></p>
               </div>
