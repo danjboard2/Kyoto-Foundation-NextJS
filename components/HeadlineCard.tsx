@@ -5,7 +5,7 @@ function HeadlineCard({ articles, options }: {articles: any, options: any}) {
       
       <>
       <section className="flex justify-center">
-      {articles.slice(-1).reverse().map((item) => (
+      {articles.slice(-1).reverse().map((item: any) => (
         <Link key={item.data.date} href={`/news/${item.data.handle}`} className="w-full md:w-3/4 max-w-[500px] pb-4 mb-8 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative">
               <img src={item.data.image}/>
               <div className=' border-b-2 border-primary mx-4 '>
