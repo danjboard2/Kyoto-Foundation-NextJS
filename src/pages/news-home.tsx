@@ -52,7 +52,7 @@ export default function Home({links, articles}: {links: any, articles: any}) {
       </div>
       <div id="builder-comps" className="!bg-transparent !mt-10 w-[90%]"> {/* This is to set the VH to a min of 100% */}
       <Hero articles={articles}/>
-      <PastReports articles={articles}/>
+      <PastReports articles={articles} options/>
       </div>
       <div className="article">
             <Footer />
