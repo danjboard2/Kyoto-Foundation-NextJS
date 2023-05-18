@@ -30,13 +30,12 @@ export default function Navbar({links} : {links: any}) {
               <p>$0.33</p>
             </div>
             <div className="menu-icon-container">
-              <Link href="" className="menu-icon js-menu_toggle closed">				
+              <Link href="#" className="menu-icon js-menu_toggle closed">
                 <span className="menu-icon_box">
                   <span className="menu-icon_line menu-icon_line--1"></span>
                   <span className="menu-icon_line menu-icon_line--2"></span>
                   <span className="menu-icon_line menu-icon_line--3"></span>
                 </span>
-              
               </Link>
             </div>
           </div>
