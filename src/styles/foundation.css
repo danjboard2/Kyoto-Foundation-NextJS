@@ -3,7 +3,7 @@
   font-family: 'Digital Numbers';
   font-style: normal;
   font-weight: normal;
-  src: local('Digital Numbers'), url('/fonts/DigitalNumbers-Regular.woff') format('woff');
+  src: url(../fonts/DigitalNumbers-Regular.otf) format("opentype");
   }
 @font-face {
   font-family: Interstate;
