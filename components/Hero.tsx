@@ -17,7 +17,7 @@ export default function Hero({articles} : {articles: any}) {
       </div>
       <div className="w-full md:w-1/2">
       <h2 className='text-2xl md:text-3xl xl:text-5xl font-bold text-accent uppercase text-center'>Latest Headline</h2>
-      <HeadlineCard articles={articles} />
+      <HeadlineCard articles={articles} options />
       </div>
       </section>
       </>
