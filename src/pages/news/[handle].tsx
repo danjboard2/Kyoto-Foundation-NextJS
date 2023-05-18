@@ -6,6 +6,7 @@ import {
     useIsPreviewing,
   } from "@builder.io/react";
   import Image from 'next/image'
+  import Link from 'next/link'
   import React from 'react';
   import Head from "next/head";
   import Navbar from '../../../components/Navbar'
@@ -13,7 +14,7 @@ import {
   import DefaultErrorPage from "next/error";
   import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
-import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
+import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
   builder.init('05829d3eace9455893e1d144d2d4a91a');
 
   
@@ -48,6 +49,9 @@ function Article({ article, links, options }: {article:any, links: any, options:
             {!isPreviewing ? <Navbar links={links}/> : ''}
             </div>
             <div id="builder-comps" className="!max-w-[680px]">
+            <div className="flex justify-between py-2 pt-1 my-0 mb-10 border-b-2">
+              <p  className="text-base text-primary font-semibold"><ChevronLeftOutlinedIcon className='pr-[3px] mb-[3px]'/><Link href="/news-home" className="hover:underline">BACK TO NEWS &amp; ARTICLES</Link></p>
+              </div>
               <h1 className="text-2xl md:text-3xl lg:text-5xl  font-medium">{data?.title}</h1>
               <div className="flex justify-between py-2 pt-3 my-10 border-y-2">
               <p  className="text-base text-primary font-semibold"><CalendarMonthOutlinedIcon className='pr-[3px] mb-[3px]'/> {new Date(data?.date).toLocaleDateString('en-GB', options)}</p>
