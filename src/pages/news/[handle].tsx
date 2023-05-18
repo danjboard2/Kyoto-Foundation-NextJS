@@ -5,6 +5,7 @@ import {
     BuilderContent,
     useIsPreviewing,
   } from "@builder.io/react";
+  import Image from 'next/image'
   import React from 'react';
   import Head from "next/head";
   import Navbar from '../../../components/Navbar'
@@ -46,7 +47,7 @@ function Article({ article, links }: {article:any, links: any}) {
             <div id="builder-comps">
               <h1 className="text-5xl">{data?.title}</h1>
               <p>{data?.blurb}</p>
-              <img src={data?.image}/>
+              <Image src={data?.image} width={500} height={500} alt={data?.title}/>
               <p>{data?.date}</p>
 
               {/* Render the Builder drag/drop'd content */}

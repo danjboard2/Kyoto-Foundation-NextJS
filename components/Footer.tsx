@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 function Footer() {
 
@@ -8,7 +9,7 @@ function Footer() {
       <div id="footer">
         <div className="wrap">
           <div className="row left">
-            <figure><img src="/images/logo-with-text.png"/></figure>
+            <figure><Image src="/images/logo-with-text.png" width={420} height={86} alt="Kyoto Logo"/></figure>
           </div>
           <div className="row">
             <h4>About</h4>
@@ -31,7 +32,7 @@ function Footer() {
             <div className="accordion container">
               <div id="accordion-1">
                 <div className="head">
-                <p>About <img src="/images/chevron-down.png"/></p>
+                <p>About <Image src="/images/chevron-down.png" width={30} height={30} alt="Down Arrow" /></p>
                 </div>
                 <div className="content">
                 <Link href="#" className="developers"><p>Community</p></Link>
@@ -41,7 +42,7 @@ function Footer() {
 
               <div id="accordion-1">
                 <div className="head">
-                <p>Build on Kyoto <img src="/images/chevron-down.png"/></p>
+                <p>Build on Kyoto <Image src="/images/chevron-down.png" width={30} height={30} alt="Down Arrow" /></p>
                 </div>
                 <div className="content">
                 <Link href="#" className="developers"><p>Grant Program</p></Link>
@@ -50,7 +51,7 @@ function Footer() {
 
               <div id="accordion-1">
                 <div className="head">
-                <p>Ecosystem <img src="/images/chevron-down.png"/></p>
+                <p>Ecosystem <Image src="/images/chevron-down.png" width={30} height={30} alt="Down Arrow" /></p>
                 </div>
                 <div className="content">
                   <Link href="https://kyotoswap.io" target="_blank"><p>KyotoSwap.io</p></Link>
@@ -62,12 +63,12 @@ function Footer() {
           <div className="row social">
             <p>Join our community</p>
             <div className="social-inner">
-              <Link href="https://discord.gg/kyotoprotocol" target="_blank"><figure><img src="/images/social/discord-footer.png"/></figure></Link>
-              <Link href="https://twitter.com/official_kpio" target="_blank"><figure><img src="/images/social/twitter-footer.png"/></figure></Link>
-              <Link href="https://medium.com/@KyotoProtocol.io" target="_blank"><figure><img src="/images/social/medium-footer.png"/></figure></Link>
-              <Link href="https://www.youtube.com/channel/UCIijeBIESm9rnnckEwbU14g" target="_blank"><figure><img src="/images/social/youtube-footer.png"/></figure></Link>
-              <Link href="https://t.me/KyotoProtocol" target="_blank"><figure><img src="/images/social/telegram-footer.png"/></figure></Link>
-              <Link href="https://www.linkedin.com/company/kyotoprotocol-io/" target="_blank"><figure><img src="/images/social/linkedin-footer.png"/></figure></Link>
+              <Link href="https://discord.gg/kyotoprotocol" target="_blank"><figure><Image src="/images/social/discord-footer.png" width={50} height={50} alt="Social logo"/></figure></Link>
+              <Link href="https://twitter.com/official_kpio" target="_blank"><figure><Image src="/images/social/twitter-footer.png" width={50} height={50} alt="Social logo"/></figure></Link>
+              <Link href="https://medium.com/@KyotoProtocol.io" target="_blank"><figure><Image src="/images/social/medium-footer.png" width={50} height={50} alt="Social logo"/></figure></Link>
+              <Link href="https://www.youtube.com/channel/UCIijeBIESm9rnnckEwbU14g" target="_blank"><figure><Image src="/images/social/youtube-footer.png" width={50} height={50} alt="Social logo"/></figure></Link>
+              <Link href="https://t.me/KyotoProtocol" target="_blank"><figure><Image src="/images/social/telegram-footer.png" width={50} height={50} alt="Social logo"/></figure></Link>
+              <Link href="https://www.linkedin.com/company/kyotoprotocol-io/" target="_blank"><figure><Image src="/images/social/linkedin-footer.png" width={50} height={50} alt="Social logo"/></figure></Link>
             </div>
           </div>
         </div>

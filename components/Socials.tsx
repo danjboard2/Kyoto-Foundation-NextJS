@@ -1,36 +1,36 @@
-import Link from 'next/link';
+import Image from 'next/image';
 export default function Socials() {
 
     return (
       <>
        <div className="flex flex-row justify-center align-middle items-center">
         <a target="_blank" href="https://discord.gg/kyotoprotocol">
-        <figure><img className="max-w-[40px] p-2" src="/images/social/discord.png"/>
+        <figure><Image className="max-w-[40px] p-2" src="/images/social/discord.png"  width={50} height={50} alt="Social logo"/>
         </figure>
       </a>
      <a target="_blank" href="https://twitter.com/official_kpio">
      <figure>
-        <img className="max-w-[40px] p-2" src="/images/social/twitter.png"/>
+     <Image className="max-w-[40px] p-2" src="/images/social/twitter.png" width={50} height={50} alt="Social logo"/>
    </figure>
     </a>
        <a target="_blank" href="https://medium.com/@KyotoProtocol.io">
         <figure>
-        <img className="max-w-[40px] p-2" src="/images/social/medium.png"/>
+        <Image className="max-w-[40px] p-2" src="/images/social/medium.png" width={50} height={50} alt="Social logo"/>
         </figure>
           </a>
        <a target="_blank" href="https://www.youtube.com/channel/UCIijeBIESm9rnnckEwbU14g">
         <figure>
-        <img className="max-w-[40px] p-2" src="/images/social/youtube.png"/>
+        <Image className="max-w-[40px] p-2" src="/images/social/youtube.png" width={50} height={50} alt="Social logo"/>
            </figure>
              </a>
               <a target="_blank" href="https://t.me/KyotoProtocol">
              <figure>
-              <img className="max-w-[40px] p-2" src="/images/social/telegram.png"/>
+             <Image className="max-w-[40px] p-2" src="/images/social/telegram.png" width={50} height={50} alt="Social logo"/>
                </figure>
               </a>
             <a target="_blank" href="https://www.linkedin.com/company/kyotoprotocol-io/">
            <figure>
-           <img className="max-w-[40px] p-2" src="/images/social/linkedin.png"/>
+           <Image className="max-w-[40px] p-2" src="/images/social/linkedin.png" width={50} height={50} alt="Social logo"/>
           </figure>
           </a>
           </div>

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link';
+import Iframe from 'react-iframe'
 import Script from 'next/script'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
@@ -35,7 +36,7 @@ export default function Home({links}: {links: any}) {
     <div id="foundation">
       <Navbar links={links} />
       <section id="topbox">
-      <iframe className="bg-video" src="https://player.vimeo.com/video/818970225?h=77fe4aee3e&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1" frameBorder="0" allow="autoplay"></iframe><script src="https://player.vimeo.com/api/player.js"></script>
+      <Iframe className="bg-video" src="https://player.vimeo.com/video/818970225?h=77fe4aee3e&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1" frameBorder={0} allow="autoplay"/>
         <div className="video-overlay"></div>
         <div id="contents">
             <div id="logo-login">
@@ -52,12 +53,12 @@ export default function Home({links}: {links: any}) {
                 <div className="inner-ticker"><p>20,322</p></div>
               </div>
               <div className="socials">
-                <Link href="https://discord.gg/kyotoprotocol" target="_blank"><figure><img src="images/social/discord.png"/></figure></Link>
-                <Link href="https://twitter.com/official_kpio" target="_blank"><figure><img src="images/social/twitter.png"/></figure></Link>
-                <Link href="https://medium.com/@KyotoProtocol.io" target="_blank"><figure><img src="images/social/medium.png"/></figure></Link>
-                <Link href="https://www.youtube.com/channel/UCIijeBIESm9rnnckEwbU14g" target="_blank"><figure><img src="images/social/youtube.png"/></figure></Link>
-                <Link href="https://t.me/KyotoProtocol" target="_blank"><figure><img src="images/social/telegram.png"/></figure></Link>
-                <Link href="https://www.linkedin.com/company/kyotoprotocol-io/" target="_blank"><figure><img src="images/social/linkedin.png"/></figure></Link>
+                <Link href="https://discord.gg/kyotoprotocol" target="_blank"><figure><Image src="/images/social/discord.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://twitter.com/official_kpio" target="_blank"><figure><Image src="/images/social/twitter.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://medium.com/@KyotoProtocol.io" target="_blank"><figure><Image src="/images/social/medium.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://www.youtube.com/channel/UCIijeBIESm9rnnckEwbU14g" target="_blank"><figure><Image src="/images/social/youtube.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://t.me/KyotoProtocol" target="_blank"><figure><Image src="/images/social/telegram.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://www.linkedin.com/company/kyotoprotocol-io/" target="_blank"><figure><Image src="/images/social/linkedin.png" width={50} height={50} alt="Social logo"/></figure></Link>
               </div>
             </div>
         </div>
@@ -85,10 +86,10 @@ export default function Home({links}: {links: any}) {
             
           </div>
           <figure className="scroll-logo">
-            <img src="images/logo-window.png" alt="logo window"/>
+            <Image src="/images/logo-window.png" alt="logo window" width={1000} height={1000}/>
             </figure>
           <div className="point"  id="section3">
-            <article id="three" name="id3">
+            <article id="three" data-name="id3">
               <h3><b>CARBON NEGATIVE</b>
           <br/><i>BY DESIGN</i></h3>
               <p>The Kyoto blockchain is the first blockchain to contribute 25% of each transactional gas fee to offset carbon emissions via reforestation.</p>
@@ -96,7 +97,7 @@ export default function Home({links}: {links: any}) {
             </article>
             </div>
             <div className="point"  id="section4">
-            <article id="four" name="id4">
+            <article id="four" data-name="id4">
               <h3><b>ReFi.</b>
           <br/><i>REDEFINED</i></h3>
               <p>The Kyoto blockchain is built from the ground up to maximise the positive impact made by regenerative finance projects. </p>
@@ -105,7 +106,7 @@ export default function Home({links}: {links: any}) {
             </article>
             </div>
           <div className="point" id="section1">
-            <article id="one" name="id1">
+            <article id="one" data-name="id1">
             <h3><b>CONSERVATION</b> <br/><i>FOCUSED</i></h3>
             <p>We are committed to scaling global conservation, protecting crucial biodiversity and helping make a difference in the fight against climate change.</p>
         
@@ -115,7 +116,7 @@ export default function Home({links}: {links: any}) {
             </article>
           </div>
           <div className="point" id="section2">
-            <article id="two" name="id2">
+            <article id="two" data-name="id2">
             <h3><b>OFFSET.</b>
         <br/><i>ONCHAIN</i></h3>
             <p>Blockchain technology can keep a secure and transparent ledger for the whole supply chain involved in the creation and tokenisation of carbon assets.</p>

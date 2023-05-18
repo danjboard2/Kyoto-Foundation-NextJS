@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { useState } from "react"
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
@@ -48,7 +49,7 @@ function PastReports({ articles, options }: {articles: any, options: any}) {
       {articles.slice(0, -1).reverse().map((item:any) => (
         <div key={item.data.date} className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
         <Link href={`/news/${item.data.handle}`} className="">
-              <img src={item.data.image}/>
+              <Image src={item.data.image} alt={item.data.title} width={730} height={260}/>
               <div className=' border-b-2 border-primary mx-4 '>
               <h2 className='text-primary text-xl uppercase font-bold mt-1 py-2 text-left'>{item.data.title}</h2>
               </div>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 export default function Navbar({links} : {links: any}) {
 
     return (
@@ -61,12 +62,12 @@ export default function Navbar({links} : {links: any}) {
             <div className="socials">
               <p>Join our community</p>
               <div className="socials-inner">
-                <Link href="https://discord.gg/kyotoprotocol" target="_blank"><figure><img src="images/social/discord.png"/></figure></Link>
-                <Link href="https://twitter.com/official_kpio" target="_blank"><figure><img src="images/social/twitter.png"/></figure></Link>
-                <Link href="https://medium.com/@KyotoProtocol.io" target="_blank"><figure><img src="images/social/medium.png"/></figure></Link>
-                <Link href="https://www.youtube.com/channel/UCIijeBIESm9rnnckEwbU14g" target="_blank"><figure><img src="images/social/youtube.png"/></figure></Link>
-                <Link href="https://t.me/KyotoProtocol" target="_blank"><figure><img src="images/social/telegram.png"/></figure></Link>
-                <Link href="https://www.linkedin.com/company/kyotoprotocol-io/" target="_blank"><figure><img src="images/social/linkedin.png"/></figure></Link>
+                <Link href="https://discord.gg/kyotoprotocol" target="_blank"><figure><Image src="/images/social/discord.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://twitter.com/official_kpio" target="_blank"><figure><Image src="/images/social/twitter.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://medium.com/@KyotoProtocol.io" target="_blank"><figure><Image src="/images/social/medium.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://www.youtube.com/channel/UCIijeBIESm9rnnckEwbU14g" target="_blank"><figure><Image src="/images/social/youtube.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://t.me/KyotoProtocol" target="_blank"><figure><Image src="/images/social/telegram.png" width={50} height={50} alt="Social logo"/></figure></Link>
+                <Link href="https://www.linkedin.com/company/kyotoprotocol-io/" target="_blank"><figure><Image src="/images/social/linkedin.png" width={50} height={50} alt="Social logo"/></figure></Link>
               </div>
             </div>
           </div>
