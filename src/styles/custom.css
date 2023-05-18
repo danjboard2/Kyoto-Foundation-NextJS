@@ -118,3 +118,6 @@ div#scrolling {padding-top: 88px;}
 .arrow--disabled {
   fill: rgba(255, 255, 255, 0.5);
 }
+.builder-text {font-family: 'Interstate', sans-serif; font-size:20px; font-weight:200}
+.builder-text strong {font-weight:bold;}
+.builder-text a {text-decoration:underline; font-weight:300}

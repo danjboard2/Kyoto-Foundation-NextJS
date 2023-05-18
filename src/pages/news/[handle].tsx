@@ -11,10 +11,13 @@ import {
   import Navbar from '../../../components/Navbar'
   import Footer from '../../../components/Footer'
   import DefaultErrorPage from "next/error";
+  import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
+import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
   builder.init('05829d3eace9455893e1d144d2d4a91a');
 
   
-function Article({ article, links }: {article:any, links: any}) {
+function Article({ article, links, options }: {article:any, links: any, options: any}) {
     const isPreviewing = useIsPreviewing();
     if (!article && !isPreviewing) {
       return (
@@ -44,11 +47,14 @@ function Article({ article, links }: {article:any, links: any}) {
             <div id="pages">
             {!isPreviewing ? <Navbar links={links}/> : ''}
             </div>
-            <div id="builder-comps">
-              <h1 className="text-5xl">{data?.title}</h1>
-              <p>{data?.blurb}</p>
-              <Image src={data?.image} width={500} height={500} alt={data?.title}/>
-              <p>{data?.date}</p>
+            <div id="builder-comps" className="!max-w-[680px]">
+              <h1 className="text-5xl  font-medium">{data?.title}</h1>
+              <div className="flex justify-between py-2 pt-3 my-10 border-y-2">
+              <p  className="text-base text-primary font-semibold"><CalendarMonthOutlinedIcon className='pr-[3px] mb-[3px]'/> {new Date(data?.date).toLocaleDateString('en-GB', options)}</p>
+              <p className="text-base text-primary font-semibold"><WatchLaterOutlinedIcon  className='pr-[3px] mb-[3px]'/> {data?.mins} MIN READ</p>
+              </div>
+              <Image src={data?.image} width={680} height={500} alt={data?.title}/>
+              { /* <p>{data?.blurb}</p> */}
 
               {/* Render the Builder drag/drop'd content */}
               <BuilderComponent
