@@ -48,7 +48,7 @@ function Article({ article, links, options }: {article:any, links: any, options:
             {!isPreviewing ? <Navbar links={links}/> : ''}
             </div>
             <div id="builder-comps" className="!max-w-[680px]">
-              <h1 className="text-5xl  font-medium">{data?.title}</h1>
+              <h1 className="text-2xl md:text-3xl lg:text-5xl  font-medium">{data?.title}</h1>
               <div className="flex justify-between py-2 pt-3 my-10 border-y-2">
               <p  className="text-base text-primary font-semibold"><CalendarMonthOutlinedIcon className='pr-[3px] mb-[3px]'/> {new Date(data?.date).toLocaleDateString('en-GB', options)}</p>
               <p className="text-base text-primary font-semibold"><WatchLaterOutlinedIcon  className='pr-[3px] mb-[3px]'/> {data?.mins} MIN READ</p>
