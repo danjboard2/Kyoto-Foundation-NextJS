@@ -45,7 +45,7 @@ function PastReports({ articles, options }: {articles: any, options: any}) {
       { /* This needs to be a carousel - glidejs? */ } {/* We're hiding the first article here so we can display it on it's own at the top */}
       <div className='flex w-[80%] md:w-[90%] my-10'>
       <div ref={sliderRef} className="keen-slider flex flex-row h-full">
-      {articles.slice(0, -1).reverse().map((item) => (
+      {articles.slice(0, -1).reverse().map((item:any) => (
         <div key={item.data.date} className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
         <Link href={`/news/${item.data.handle}`} className="">
               <img src={item.data.image}/>
