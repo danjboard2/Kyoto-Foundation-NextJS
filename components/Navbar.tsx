@@ -51,7 +51,7 @@ export default function Navbar({links} : {links: any}) {
               <li className="list_item"><Link href="#" className="developers">Developers</Link>
                 </li>
               <li className="list_item"><Link href="#" className="developers">Grant Program</Link></li>
-              {links.data.links.map((link, index) => (
+              {links.data.links.map((link:any, index:any) => (
               <li className="list_item" key={index}><a key={index} href={link.url}>
               {link.text}
             </a></li>
