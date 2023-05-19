@@ -9,6 +9,7 @@ import {
   import Link from 'next/link'
   import React from 'react';
   import Head from "next/head";
+  import SocialShare from '../../../components/SocialShare'
   import Navbar from '../../../components/Navbar'
   import Footer from '../../../components/Footer'
   import DefaultErrorPage from "next/error";
@@ -50,7 +51,8 @@ function Article({ article, links, options }: {article:any, links: any, options:
             </div>
             <div id="builder-comps" className="!max-w-[680px] px-3 md:px-0">
             <div className="flex justify-between py-2 pt-1 my-0 mb-10 border-b-2">
-              <p  className="text-base text-primary font-semibold"><ChevronLeftOutlinedIcon className='pr-[3px] mb-[3px]'/><Link href="/news-home" className="hover:underline">BACK TO NEWS &amp; ARTICLES</Link></p>
+              <p  className="text-base text-primary font-semibold"><ChevronLeftOutlinedIcon className='pr-[3px] mb-[3px]'/><Link href="/news-home" className="hover:underline">NEWS &amp; ARTICLES</Link></p>
+              <div className='flex w-[140px] justify-around'><SocialShare {...data}/></div>
               </div>
               <h1 className="text-2xl md:text-3xl lg:text-5xl  font-medium text-primary">{data?.title}</h1>
               <div className="flex justify-between py-2 pt-3 my-10 border-y-2">
