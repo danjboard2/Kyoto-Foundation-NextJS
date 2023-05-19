@@ -16,10 +16,12 @@ import {
   import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
 import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
+import Claps from "@upstash/claps";
   builder.init('05829d3eace9455893e1d144d2d4a91a');
+  import "@upstash/claps/style.css";
 
   
-function Article({ article, links, options }: {article:any, links: any, options: any}) {
+function Article({article, links, options}: {article:any, links: any, options: any}) {
     const isPreviewing = useIsPreviewing();
     if (!article && !isPreviewing) {
       return (
@@ -52,7 +54,7 @@ function Article({ article, links, options }: {article:any, links: any, options:
             <div id="builder-comps" className="!max-w-[680px] px-3 md:px-0">
             <div className="flex justify-between py-2 pt-1 my-0 mb-10 border-b-2">
               <p  className="text-base text-primary font-semibold"><ChevronLeftOutlinedIcon className='pr-[3px] mb-[3px]'/><Link href="/news-home" className="hover:underline">NEWS &amp; ARTICLES</Link></p>
-              <div className='flex w-[140px] justify-around'><SocialShare {...data}/></div>
+              <div className='flex w-[140px] justify-around'><Claps fixed="left"></Claps><SocialShare {...data}/></div>
               </div>
               <h1 className="text-2xl md:text-3xl lg:text-5xl  font-medium text-primary">{data?.title}</h1>
               <div className="flex justify-between py-2 pt-3 my-10 border-y-2">

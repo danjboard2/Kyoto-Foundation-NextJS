@@ -17,6 +17,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    UPSTASH_REDIS_REST_URL: 'https://fast-badger-34974.upstash.io',
+    UPSTASH_REDIS_REST_TOKEN: 'c9b2923849884e2a92f841135f4b3256',
+  },
 }
-
 module.exports = nextConfig
