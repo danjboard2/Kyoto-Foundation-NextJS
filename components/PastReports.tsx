@@ -66,7 +66,8 @@ function PastReports({ articles, options }: {articles: any, options: any}) {
         </div>
       ))}
       </div>
-         {loaded && instanceRef.current && (
+         {loaded && instanceRef.current &&
+         (
           <>
             <Arrow
               left
@@ -86,7 +87,8 @@ function PastReports({ articles, options }: {articles: any, options: any}) {
               } 
             />
           </>
-        )}
+        )
+            }
       </div>
 
       </section>
