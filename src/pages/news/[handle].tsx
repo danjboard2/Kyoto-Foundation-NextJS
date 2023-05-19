@@ -19,7 +19,6 @@ import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
 import Claps from "@upstash/claps";
   builder.init('05829d3eace9455893e1d144d2d4a91a');
   import "@upstash/claps/style.css";
-
   
 function Article({article, links, options}: {article:any, links: any, options: any}) {
     const isPreviewing = useIsPreviewing();
