@@ -62,7 +62,7 @@ export default function Claps({
   };
 
   const onClapSaving = useCallback(
-    debounce(async (score, data) => {
+    debounce(async (score: any, data: any) => {
       try {
         if (data.userScore >= data.maxClaps) {
           return setReactionAnim(ReactionClass.no);
