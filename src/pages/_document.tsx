@@ -7,8 +7,8 @@ export default function Document() {
       <Head>
       <Script strategy="beforeInteractive" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></Script>
       <Script strategy="beforeInteractive" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></Script>
-            <Script strategy="afterInteractive" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></Script>
-            <Script strategy="afterInteractive" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></Script>
+            <Script strategy="beforeInteractive" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></Script>
+            <Script strategy="beforeInteractive" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollToPlugin.min.js"></Script>
             <Script strategy="afterInteractive" src="/js/script.js"></Script>
             <Script strategy="beforeInteractive" src="/js/scroll-script.js"></Script>
             <Script strategy="beforeInteractive" src="/js/basicLightbox.min.js"></Script>
