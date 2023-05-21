@@ -34,7 +34,6 @@ export async function getStaticProps() {
 export default function Home({links, className}: {links: any, className:any}) {
   return (
     <>
-    <Script strategy="lazyOnload" src="/js/comp-script.js"></Script>
     <Head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />

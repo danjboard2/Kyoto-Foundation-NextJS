@@ -69,4 +69,3 @@ indicators.forEach( function(indicator, i) {
   
 })
 
-

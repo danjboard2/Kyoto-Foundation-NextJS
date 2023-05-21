@@ -79,64 +79,107 @@ $(document).ready(function() {
 		event.preventDefault();
 	
 	});
-	$("a.terms").click(function() {
-		basicLightbox.create(`
-		<div class="modal" id="terms">
-			<a class="close"><p>X</p></a>
-	<p>
-		<strong>Competition Terms and Conditions</strong><br>
-	</p>
-	<ul>
-		<li>Eligibility: The Kyoto Protocol Waiting List Competition (“Competition”) is open to individuals who have signed up for the Kyoto Blockchain waiting list (“Participants”). Only one email from each individual can be used to sign up to the waiting list competition.</li>
-		<li>Referral Link: Participants will receive a unique referral link that can be shared with their network.</li>
-		<li>Referral Points System: When a new subscriber signs up organically, they will earn 1 point. If you register using another person’s referral link, you will also earn 1 point. By successfully referring someone else (who signs up through your referral link), you will receive 2 points. Additionally, you can earn an extra point by sharing your referral link on various social media platforms, such as Facebook, Twitter, Whatsapp, LinkedIn, Facebook Messenger, Pinterest, Reddit, and Telegram.</li>
-		<li>Referral Rewards: For every person who signs up using a Participant’s referral link, the Participant will climb higher up the waiting list. The number of referrals completed will determine the Participant’s position on the waiting list.</li>
-		<li>Referral Tiers: The Competition has four reward tiers for top referrers based on the number of successful referrals. The reward tiers and the prizes offered are as follows:</li>
-		<li>The Top 1 subscriber will receive = 1,000 BUSD + Kyoto Hoodie (Worth 80 BUSD)</li>
-		<li>Subscribers 2-10 will receive = 200 BUSD + Kyoto Hoodie (Worth 80 BUSD)</li>
-		<li>Subscribers 11-50 will receive = 100 BUSD</li>
-		<li>Subscribers 51 - 1000 will receive = 10 BUSD</li>
-		<li>6. Reward Fulfillment: Participants who reach a reward tier will receive an email notification within 30 days of the Competition ending. Participants must respond to the email within 7 days to claim their reward. The rewards are non-transferable and cannot be exchanged for cash.</li>
-		<li>7. Competition Start and End date: The Waiting list competition will launch on the 5th of May 2023 and will run until the 30th of June 2023.</li>
-		<li>8. Competition Sign-Up Abuse: Kyoto Protocol reserves the right to disqualify and remove any emails that are known to be duplicates or fake.</li>
-		<li>9. Competition Changes: Kyoto Protocol reserves the right to modify or terminate the Competition at any time for any reason. Kyoto Protocol also reserves the right to disqualify any Participant for fraudulent or abusive behavior.</li>
-		<li>10. Privacy: Participants’ personal information will be used in accordance with Kyoto Protocol’s privacy policy.
-		<li>By participating in the Competition, Participants agree to these terms and conditions.</li>
-	</ul>
-</div>
-`, {
-onShow: (instance) => {
-	instance.element().querySelector('a').onclick = instance.close
-}
-}).show();
-event.preventDefault();
-});
-$("a.thanks").click(function() {
-		basicLightbox.create(`
-		<div class="modal" id="thanks">
-			<a class="close"><p>X</p></a>
-	<p>
-		<strong>Thank You for <span>Signing Up!</span></strong><br>
-	</p>
-<p>Thank you for signing up to our waiting list! We're thrilled to have you on board and can't wait to show you what we've been working on.</p>
-
-<p>As a special thank you, we've provided you with a unique referral code/link to share with your network. By referring your friends and colleagues to our waiting list, you'll climb higher up the list and increase your chances of being among the first to experience our cutting-edge technology.</p>
-
-	<p>The more people you refer, the higher your position on the waiting list leaderboard will be, so don't hesitate to spread the word! Plus, as an added bonus, you could earn some fantastic rewards just for referring others.</p>
-
-		<p>So go ahead, share your unique referral code/link with everyone you know, and help us build a community of excited users who are ready to change the game. Thanks again for your support, and we'll be in touch soon with more updates!</p>
-</div>
-`, {
-onShow: (instance) => {
-	instance.element().querySelector('a').onclick = instance.close
-}
-}).show();
-event.preventDefault();
-});
-if (window.location.href.indexOf("terms") > -1) {
-	$("a.terms").click();
-}
-if (window.location.href.indexOf("thanks") > -1) {
-	$("a.thanks").click();
-}
 	});
+
+var scrolling = 0;
+
+	$(window).on('load', function () {
+	var navButtons = $(".main-nav a").filter("[href^='#']");
+	  var ctrl = new ScrollMagic.Controller({addIndicators: true});
+	  $(window).on("click", ".main-nav a", function(event) {
+		scrolling = 1;
+		event.preventDefault();
+		const linkId = $(this).attr("href");
+		ctrl.scrollTo(function (newpos) {
+		  TweenMax.to(window, 0.5, {scrollTo: {y:newpos},onComplete:scrollingOff})
+	  });
+		ctrl.scrollTo(linkId);
+		
+	  })
+		
+	   TweenLite.to(".text1", 1, {fontSize:100,
+	   top:'20%',delay:.5,ease: Power4.easeOut}) 
+		
+		ctrl = new ScrollMagic.Controller({
+		});
+	
+	
+	function scrollingOff(){scrolling = 0};
+	
+	var currentSlide = 0;
+	console.log('currentslide is' + currentSlide)
+		// This each sets the animation
+		$('.hero').each(function(index,element) {  
+			new ScrollMagic.Scene({
+				triggerHook: 'onLeave',
+				triggerElement: this,
+				offset:-20,
+			})
+			.on('leave', function (event) 
+			{if(scrolling === 0){
+				  console.log("scrolling " + scrolling);
+				  //var topbox = $('#topbox').height();
+				  console.log(index);
+				  console.log('.hero' + (index))
+				  currentSlide = index;
+				  //console.log('currentslide is' + currentSlide)
+				//  console.log('window height: ' + $('.hero').height() - (index));
+				  TweenLite.to(navButtons, 0.5, {className: ""});
+				  console.log(event.scrollDirection);
+
+				  if (currentSlide > 0){
+				  TweenLite.to(window, 1,{scrollTo:{y:".hero" + (index),autoKill:false},ease: Power4.easeOut});
+				  TweenLite.to(navButtons.filter(".active"), 0.5, {className: ""});
+				  TweenLite.to(navButtons.filter("[href='#section-" + currentSlide + "']"), 0.5, {className: "active"});
+				}
+				if (currentSlide == 0){
+console.log('its zero')				
+TweenLite.to(window, 1,{scrollTo:{y:"#topbox",autoKill:false},ease: Power4.easeOut});
+				}
+				TweenLite.to(".text" + (index), 1, {fontSize:30,top:'0',delay:.5,ease: Power4.easeOut})
+			}
+			   })
+			.addTo(ctrl);  // scene end
+	
+	
+			
+		   new ScrollMagic.Scene({
+				triggerElement: this,
+				triggerHook: 'onEnter',
+				offset:20, // small offset added to prevent overscrolling accidentally triggering
+			})
+			  .addTo(ctrl)
+			  .on('enter', function (event) {
+			   if(scrolling === 0){
+				console.log("scrolling " + scrolling);
+					  console.log('triggered');
+					  console.log('.hero' + (index+1))
+					 //console.log('currentslide is ' + currentSlide)
+					  currentSlide = index+1;
+					  var prevSlide = index;
+					  console.log(index+1);
+					  console.log(event.scrollDirection);
+					  if (currentSlide == 0){
+						console.log('its zerooo')				
+						TweenLite.to(window, 1,{scrollTo:{y:".hero1",autoKill:false},ease: Power4.easeOut});
+										}
+					  if (currentSlide > 1){
+					  TweenLite.to(window, 1, {scrollTo:{y:".hero" + (index+1),autoKill:false},ease: Power4.easeOut});
+					  }
+					  console.log(index)
+					  if (currentSlide < 1){
+						TweenLite.to(window, 1, {scrollTo:{y:".hero" + (currentSlide+1),autoKill:false},ease: Power4.easeOut});
+						console.log('currentslide is ' + (currentSlide+1))
+					  }
+					  TweenLite.to(navButtons.filter(".active"), 0.5, {className: ""});
+					  TweenLite.to(navButtons.filter("[href='#section-" + prevSlide + "']"), 0.5, {className: ""});
+					TweenLite.to(navButtons.filter("[href='#section-" + currentSlide + "']"), 0.5, {className: "active"});
+			   }       
+					  TweenLite.to(".text" + (index+1), 1, {fontSize:30,top:'0',delay:.5,ease: Power4.easeOut})
+											 
+			   }); // scene end
+		   currentSlide= 0;
+		  
+		}); //hero each
+	  
+	  }); //window onload
