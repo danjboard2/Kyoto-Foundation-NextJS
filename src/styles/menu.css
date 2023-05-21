@@ -349,7 +349,7 @@ h2.menu_title {font-size: 24px;/* margin: 29px; */margin-left: 0px;color: #a1d2b
 		/* height: 100vh; */
 		right: -250px;
 		position: absolute;
-		top: 84px;
+		top: 115px;
 		width: 300px;
 		z-index: 20;
 		mix-blend-mode: unset;
@@ -365,9 +365,9 @@ h2.menu_title {font-size: 24px;/* margin: 29px; */margin-left: 0px;color: #a1d2b
 		display: inline-block;
 		width: 100%;
 	}
-.side_menu .container .socials {bottom:100px;position:absolute;flex-flow: column;display: none;width:92%;}
+.side_menu .container .socials {bottom:150px;position:absolute;flex-flow: column;display: none;width:92%;}
 .side_menu .container .socials p {text-align: left;color: #c0eed0;font-size: 16px;font-weight: 300;padding-left: 10px;border-bottom: 1px solid #c3f2d4;margin-bottom: 5px;padding-bottom: 8px;text-transform: uppercase;}
-.side_menu .container .socials-inner {flex-flow:row;display: flex;}
+.side_menu .container .socials-inner {flex-flow:row;display: flex;align-items:center;}
 .side_menu .container .socials-inner a figure {padding: 12px;}
 .side_menu.fixed {position: absolute;top: 84px;}
 

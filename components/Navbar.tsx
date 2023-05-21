@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
-export default function Navbar({links} : {links: any}) {
-
+export default function Navbar({links, className} : {links: any, className?: any}) {
+if(className == undefined){
+  className = '';
+}
     return (
       <>
     <div id="foundation">
-      <div className="menuwrap">
+      <div className={'menuwrap ' + className}>
         <div className="menuinner">
           <Link href="/">
           <div className="logo">
@@ -71,7 +73,7 @@ export default function Navbar({links} : {links: any}) {
             </div>
           </div>
         </div>
-        <div id="background-blur"></div>
+        <div id="background-blur" className={className}></div>
       </div>
       </div>
       </>

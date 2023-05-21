@@ -48,7 +48,7 @@ export default function Home({links, articles}: {links: any, articles: any}) {
     <>
     <div id="foundation" className=" bg-gradient-radial from-[#14534E] to-[#032321]">
     <div id="pages">
-      <Navbar links={links} />
+      <Navbar links={links} className/>
       </div>
       <div id="builder-comps" className="!bg-transparent !mt-10 w-[90%]"> {/* This is to set the VH to a min of 100% */}
       <Hero articles={articles}/>

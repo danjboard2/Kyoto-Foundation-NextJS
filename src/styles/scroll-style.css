@@ -117,9 +117,9 @@ body {
   padding: 20rem;
   
 }
-.philosophie .point h3 {font-size: 50px;line-height: 1;margin-bottom:20px;color: #052c29;}
-.philosophie .point p {font-size: 22px;color: #052c29;}
-
+.philosophie .point h3 {font-size: 50px;font-weight:500;line-height: 1;margin-bottom:20px;color: #052c29;}
+.philosophie .point p {font-size: 22px;color: #052c29;margin-bottom:16px; line-height:110%}
+#scroll-block-wrap {display:flex; flex-flow:column}
 .philosophie .wrapper {
   height: 100vh;
   width: 100%;
@@ -129,7 +129,7 @@ body {
   flex-basis: 50%;
   margin-right: auto;
 }
-
+.point article .butn {margin-top:16px}
 .point article.active{ transform: translate(0px, 0px) !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -164,14 +164,10 @@ body {
 @media screen and (max-width: 500px) {
     .philosophie .point p {font-size: 14px;}
    .philosophie .butn {font-size: 14px;}
-.philosophie .point {flex-flow:column;justify-content: top;padding:2rem;padding-top: 5rem;}
+.philosophie .point {flex-flow:column;justify-content: top;padding:2rem;padding-top: 6.5rem;}
 .point article {flex-basis: 60%;}
   .indicators {margin-top: 16vh;left:10px;}
   .point img {margin-right: 5rem;}
-  figure.scroll-logo {bottom: 10%;top: auto;height: 25%;width: 100%;justify-content: space-around;left: 0px;padding-top: 0px;}
-figure.scroll-logo img  {
+  figure.scroll-logo {display:flex; bottom: 0%;top: auto;height: 30%;width: 100%;justify-content: space-around;left: 0px;padding-top: 0px; padding:0% 35%;}
 }
-}
-@media screen and ( max-height: 780px ) {
-.philosophie .point .third {}
-}
+@media screen and ( max-height: 780px ) {}

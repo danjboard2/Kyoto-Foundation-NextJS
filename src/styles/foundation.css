@@ -163,7 +163,7 @@ p {font-size: 22px;font-weight: 200;}
 .four { animation-delay: 0.8s !important; backface-visibility: hidden;opacity: 0;}
 .five { animation-delay: 1.2s !important;backface-visibility: hidden; opacity: 0;} */
 
-.modal {background: linear-gradient(180deg, rgba(22, 85, 80, 0.83) 15.91%, rgba(9, 49, 46, 0.83) 100%);border-radius:10px;padding: 10px 30px;text-align: center;}
+.modal {background: linear-gradient(180deg, rgba(22, 85, 80, 0.83) 15.91%, rgba(9, 49, 46, 0.83) 100%);border-radius:10px;padding: 10px 30px;text-align: center; text-align:-webkit-center}
 .modal p {color:#DFF4E7;line-height: 38px;font-size: 28px;margin-bottom: 20px;}
 /* Animations start here  */
 
@@ -350,9 +350,7 @@ body #foundation #topbox h1 span {
 }
 
 body .butn {
-  background: #E1F51F;
-  padding: 9px 20px;
-  padding-bottom: 7px;
+  background: #E1F51F;padding: 7px 20px; padding-bottom: 4px;
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
@@ -432,8 +430,9 @@ body #foundation #topbox div.socials {
 body #foundation #topbox div.socials div.socials {
   display: flex;
   flex-flow: row;
-  max-width: 270px;
+  max-width: 370px;
   margin-top: 12px;
+  width:100%;
 }
 
 body #foundation #topbox div.socials div.socials a:last-of-type figure {
@@ -441,8 +440,7 @@ body #foundation #topbox div.socials div.socials a:last-of-type figure {
 }
 
 body #foundation #topbox div.socials figure {
-  padding: 10px;
-}
+  height: 28px;width: 28px; position:relative; margin-right:14px;}
 
 body #foundation #topbox div.audit {
   display: flex;
@@ -863,7 +861,7 @@ body #foundation div#footer .wrap .row {width: 20%;flex-grow: 1;display: flex;fl
 body #foundation div#footer .wrap .row a {text-decoration:none;display: flex;}
 body #foundation div#footer .wrap .row.mobile {display:none}
 body #foundation div#footer .wrap .row.left {justify-content:space-between;display: flex;flex-flow: column;padding: 1%;align-items: center;font-weight: 100;flex-grow: 0;flex-shrink: 1;width: 18%;}
-body #foundation div#footer .wrap .row.left figure {text-align:center;width: 100%;}
+body #foundation div#footer .wrap .row.left figure {text-align:center;text-align:-webkit-center;width: 100%;}
 body #foundation div#footer .wrap .row.left figure img {max-width: 190px;width: 100%;}
 body #foundation div#footer .wrap .row.social {display:flex;align-items: flex-end;align-self:flex-end;width: 180px;flex-flow: column;}
 body #foundation div#footer .wrap .row.social p {font-size: 14px;border-bottom:1px solid #062926;width: 200px;color: #052624;padding-bottom: 6px;padding-left: 5px;margin-bottom: 10px;font-weight: 300;}
@@ -1031,13 +1029,13 @@ body #foundation #topbox #contents {max-height: 100%;}
 @media screen and (max-width: 1200px) {
   body #foundation #safe .secure .secure-text figure img {right:10%; left:auto;}
   body #foundation #topbox div.socials {margin-top:30px}
-  body #foundation #topbox div.socials {}
+  body #foundation #topbox div.socials div.socials {max-width:270px}
   body #foundation #topbox div.audit {justify-content:flex-start;}
   body #foundation #topbox div.socials {
 }
   body #foundation #topbox div.socials div.socials {width: 100%;}
   body #foundation #topbox div.socials div.socials a {display:flex; width:90px}
-  body #foundation #topbox div.socials figure {padding: 7px;height: 36px;width: 40px;}
+  body #foundation #topbox div.socials figure {height: 34px;width: 34px; position:relative; margin-right:0px}
   body #foundation #topbox div.phone {right: 10%;width: 30%;}
     body #foundation div#footer {margin-top:60px;}
   body #foundation div#footer .wrap .row.social {display:none;}
@@ -1093,7 +1091,7 @@ body #foundation #topbox #contents {max-height: 100%;}
   body #foundation #safe .secure .secure-text figure img {right:0%}
   body #foundation #safe .secure .secure-text .right {width:90%;}
   body #foundation #topbox figure.logo-bg img {height: 800px;width: 800px;aspect-ratio: 1;max-width: unset;max-height: unset;}
-body #foundation #topbox .text h1 {font-size:35px;}
+body #foundation #topbox .text h1 {font-size:35px; font-weight:500}
   body #foundation #topbox .text p {
     font-size: 18px;
     line-height: 24px;
@@ -1125,7 +1123,7 @@ body #foundation #topbox .text h1 {font-size:35px;}
   body #foundation #safe .jbe .container div p {padding:0px}
   body #foundation #safe .jbe .container div {width:70%;padding-bottom: 40px;}
   body #foundation #topbox .text p {max-width: 80%;}
-  
+ body #foundation #topbox div.socials figure {height: 30px;width: 30px; position:relative}
   body #foundation #safe .secure .secure-text figure {width:0%;}
   body #foundation #safe .secure .secure-text .right {width:100%; padding-left:40px;}
   body #foundation #safe .secure .secure-text {width:90%;}

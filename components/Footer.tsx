@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function Footer() {
 
@@ -32,7 +33,7 @@ function Footer() {
             <div className="accordion container">
               <div id="accordion-1">
                 <div className="head">
-                <p>About <Image src="/images/chevron-down.png" width={30} height={30} alt="Down Arrow" /></p>
+                <p>About <KeyboardArrowDownIcon /></p>
                 </div>
                 <div className="content">
                 <Link href="#" className="developers"><p>Community</p></Link>
@@ -42,7 +43,7 @@ function Footer() {
 
               <div id="accordion-1">
                 <div className="head">
-                <p>Build on Kyoto <Image src="/images/chevron-down.png" width={30} height={30} alt="Down Arrow" /></p>
+                <p>Build on Kyoto <KeyboardArrowDownIcon /></p>
                 </div>
                 <div className="content">
                 <Link href="#" className="developers"><p>Grant Program</p></Link>
@@ -51,7 +52,7 @@ function Footer() {
 
               <div id="accordion-1">
                 <div className="head">
-                <p>Ecosystem <Image src="/images/chevron-down.png" width={30} height={30} alt="Down Arrow" /></p>
+                <p>Ecosystem <KeyboardArrowDownIcon /></p>
                 </div>
                 <div className="content">
                   <Link href="https://kyotoswap.io" target="_blank"><p>KyotoSwap.io</p></Link>
