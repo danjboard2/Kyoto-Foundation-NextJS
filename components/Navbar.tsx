@@ -48,7 +48,7 @@ if(className == undefined){
           <div className="container">
             <h2 className="menu_title">MENU</h2>
             <ul className="list_load">
-              <li className="list_item"><Link href="/competition/" className="competition">Launch Competition</Link></li>
+              <li className="list_item"><a href="/competition/" className="competition">Launch Competition</a></li> {/* Don't use Link here, nextjs router messes up the competition script, it won't load if you switch pages */}
               <li className="list_item"><Link href="#" className="developers">Ecosystem</Link></li>
               <li className="list_item"><Link href="#" className="developers">Developers</Link>
                 </li>
