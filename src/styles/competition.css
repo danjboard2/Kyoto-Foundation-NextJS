@@ -227,6 +227,8 @@ body #foundation.comp #steps .step-wrap .step p {
 body #foundation.comp #steps .step-wrap .step figure {
     width: 100%;
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 body #foundation.comp #steps .step-wrap .step figure:after {
@@ -284,6 +286,7 @@ body #foundation.comp #steps.tiers .step-wrap .step h4 {
     font-size: 30px;
     margin-top: 18px;
     margin-bottom: 0px;
+    color:#052c29;
 }
 
 body #foundation.comp #steps.tiers .step-wrap .step p {
@@ -299,6 +302,7 @@ body #foundation.comp #steps.tiers .step-wrap .step ul {
 body #foundation.comp #steps.tiers .step-wrap .step ul li {
     font-size: 20px;
     font-weight: 300;
+    color:#052c29;
 }
 
 body #foundation.comp #steps.tiers a.butn {
