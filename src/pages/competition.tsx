@@ -1,10 +1,10 @@
+import Head from 'next/head';
 import Image from 'next/image'
 import Link from 'next/link';
-import Iframe from 'react-iframe'
 import Script from 'next/script'
-import Head from 'next/head';
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
+import React, { useEffect } from 'react';
 import { BuilderComponent, builder, useIsPreviewing, Builder } from '@builder.io/react';
 builder.init('05829d3eace9455893e1d144d2d4a91a');
 /*
@@ -30,12 +30,26 @@ export async function getStaticProps() {
     revalidate: 5,
   };
 }
-
 export default function Home({links, className}: {links: any, className:any}) {
+	useEffect(() => {
+		jQuery(function () {
+		//let c = '';
+		//!function(m:any,a:any,i:any,t:any,r:any,e:any){if(m.RH)return;r=m.RH={},r.uuid=t,r.loaded=0,r.base_url=i,r.queue=[],m.rht=function(){r.queue.push(arguments)};e=a.getElementsByTagName('script')[0],c=a.createElement('script');c.async=!0,c.src=i+'/widget/'+t+'.js',e.parentNode.insertBefore(c,e)}(window,document,'https://app.referralhero.com','MF8be2443541');
+		})
+	},);
   return (
     <>
+      <Script strategy="lazyOnload" src="/js/script.js" defer></Script>
+      <Script strategy="afterInteractive" src="/js/basicLightbox.min.js?" defer></Script>
+      <Script strategy="afterInteractive" src="https://player.vimeo.com/api/player.js"></Script>
+      <Script strategy="afterInteractive" src="//code.tidio.co/zjoi0ajovrui5txvitkzweydom4tlltp.js"></Script>
+     {/* <Script
+  strategy="lazyOnload"
+  dangerouslySetInnerHTML={{
+    __html: `!function(m,a,i,t,r,e){if(m.RH)return;r=m.RH={},r.uuid=t,r.loaded=0,r.base_url=i,r.queue=[],m.rht=function(){r.queue.push(arguments)};e=a.getElementsByTagName('script')[0],c=a.createElement('script');c.async=!0,c.src=i+'/widget/'+t+'.js',e.parentNode.insertBefore(c,e)}(window,document,'https://app.referralhero.com','MF8be2443541');`,
+  }}
+defer/>  */}
     <Head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <meta name="keywords" content="Kyoto Foundation" />
     <meta name="author"	content="Daniel Board" />

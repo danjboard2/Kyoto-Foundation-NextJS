@@ -1,10 +1,18 @@
 import Image from 'next/image'
+import Head from 'next/head';
+import Script from 'next/script'
 import Link from 'next/link';
 import Iframe from 'react-iframe'
-import Script from 'next/script'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
+import React, { useLayoutEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
+import $ from "jquery"
 import { BuilderComponent, builder, useIsPreviewing, Builder } from '@builder.io/react';
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 builder.init('05829d3eace9455893e1d144d2d4a91a');
 /*
   Initialize the Builder SDK with your organization's API Key
@@ -30,10 +38,110 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({links}: {links: any}) {
+export default function Home({links, ref}: {links: any, ref: any}) {
+  const tl = React.useRef() as React.MutableRefObject<HTMLDivElement>;
+  const elem = React.useRef() as React.MutableRefObject<HTMLDivElement>;
+  const indicators = React.useRef() as React.MutableRefObject<HTMLDivElement>;
+  const pinner = React.useRef() as React.MutableRefObject<HTMLDivElement>;
+
+  if (typeof window !== "undefined") {
+  useLayoutEffect(() => {
+    const ctx = gsap.context((self) => {
+      ScrollTrigger.defaults({
+        markers:false
+      })
+      
+      var points =gsap.utils.toArray<HTMLDivElement>('.point')
+      var indicators = gsap.utils.toArray<HTMLDivElement>('.indicator')
+      
+      var height = 110 * points.length;
+      
+      gsap.set('.indicators', {display: "flex"});
+
+      
+      var tl = gsap.timeline({
+        duration: points.length,
+        scrollTrigger: {
+        //trigger: ".philosophie",
+          start: "center center",
+          end: "+="+height+"%",
+          scrub: true,
+          //id: "points",
+          //markers: true
+        }
+      })
+      
+      var pinner = gsap.timeline({
+        scrollTrigger: {
+          start: "top top",
+          end: "+="+height+"%",
+          scrub: true,
+          pin: ".philosophie .wrapper",
+          pinSpacing: true,
+          id: "pinning",
+          markers: false
+        }
+      })
+      
+      
+      
+      points.forEach(function(elem: any, i: number) {
+        
+        gsap.set(elem, {position: "absolute", top: 0});
+      
+        tl.to(indicators[i], {backgroundColor: "#052c29", duration: 0.25}, i)
+        tl.from(elem.querySelector('article'), {autoAlpha:0, translateY: 100}, i)
+        
+        tl.addLabel('position-' + i)  // Adding a label here, with the index as unique identifier
+        
+        if (i != points.length-1) {
+          tl.to(indicators[i], {backgroundColor: "#adadad", duration: 0.25}, i+0.75)
+          tl.to(elem.querySelector('article'), {autoAlpha:0, translateY: -100}, i + 0.75)
+        }
+        
+      });
+      
+      
+      // Looping over all the indicators...
+      indicators.forEach( function(indicator: any, i: number) {
+        // ...forEach of them adding a click-event listener...
+        indicator.addEventListener('click', function() {
+          console.log()
+          // ...leveraging the ScrollToPlugin and ...
+          // ...ScrollTrigger's  labelToScroll() method
+          gsap.to(window, { 
+            duration: 1, 
+            scrollTo: tl.scrollTrigger?.labelToScroll(`position-${i}`)
+          });
+          
+        })
+        
+      })
+      
+    }, tl); // <- Scope!
+    return () => ctx.revert(); // <- Cleanup!
+  }, []);
+}
   return (
     <>
+      <Script strategy="lazyOnload" src="/js/script.js" defer></Script>
+      <Script strategy="afterInteractive" src="/js/basicLightbox.min.js" defer></Script>
+      <Script strategy="afterInteractive" src="https://player.vimeo.com/api/player.js"></Script>
+      <Script strategy="afterInteractive" src="//code.tidio.co/zjoi0ajovrui5txvitkzweydom4tlltp.js"></Script>
+      <Script
+  strategy="lazyOnload"
+  dangerouslySetInnerHTML={{
+    __html: `!function(m,a,i,t,r,e){if(m.RH)return;r=m.RH={},r.uuid=t,r.loaded=0,r.base_url=i,r.queue=[],m.rht=function(){r.queue.push(arguments)};e=a.getElementsByTagName('script')[0],c=a.createElement('script');c.async=!0,c.src=i+'/widget/'+t+'.js',e.parentNode.insertBefore(c,e)}(window,document,'https://app.referralhero.com','MF8be2443541');`,
+  }}
+/>
+     <Head>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <meta name="keywords" content="Kyoto Foundation" />
+    <meta name="author"	content="Daniel Board" />
+    <title>Kyoto Protocol - Home</title>
+    </Head>
     <div id="foundation">
+
       <Navbar links={links}  />
       <section id="topbox">
       <Iframe className="bg-video" url="https://player.vimeo.com/video/818970225?h=77fe4aee3e&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1" frameBorder={0} allow="autoplay"/>
@@ -76,20 +184,20 @@ export default function Home({links}: {links: any}) {
     <p>The Kyoto blockchain is EVM compatible, fast, secure and reliable with low transaction costs.</p>
     <Link href="#" className="butn developers"><span>Build on Kyoto</span></Link>
     </section>
-        <section className="philosophie" id="scroller">
-          <div className="wrapper">
-          <div className="indicators">
-            <div className="indicator"></div>
-            <div className="indicator"></div>
-            <div className="indicator"></div>
-            <div className="indicator"></div>
+        <section className="philosophie" id="scroller" ref={tl} >
+          <div className="wrapper" ref={pinner}>
+          <div className="indicators" ref={indicators}>
+            <div className="indicator" ></div>
+            <div className="indicator" ></div>
+            <div className="indicator"  ></div>
+            <div className="indicator" ></div>
             
           </div>
           <figure className="scroll-logo">
             <Image src="/images/logo-window.png" alt="logo window" width={1000} height={1000}/>
             </figure>
           <div className="point"  id="section3">
-            <article id="three">
+            <article id="three" ref={elem}>
               <h3><b>CARBON NEGATIVE</b>
           <br/><i>BY DESIGN</i></h3>
               <p>The Kyoto blockchain is the first blockchain to contribute 25% of each transactional gas fee to offset carbon emissions via reforestation.</p>
@@ -97,7 +205,7 @@ export default function Home({links}: {links: any}) {
             </article>
             </div>
             <div className="point"  id="section4">
-            <article id="four">
+            <article id="four"  ref={elem}>
               <h3><b>ReFi.</b>
           <br/><i>REDEFINED</i></h3>
               <p>The Kyoto blockchain is built from the ground up to maximise the positive impact made by regenerative finance projects. </p>
@@ -106,7 +214,7 @@ export default function Home({links}: {links: any}) {
             </article>
             </div>
           <div className="point" id="section1">
-            <article id="one">
+            <article id="one"  ref={elem}>
             <h3><b>CONSERVATION</b> <br/><i>FOCUSED</i></h3>
             <p>We are committed to scaling global conservation, protecting crucial biodiversity and helping make a difference in the fight against climate change.</p>
         
@@ -116,7 +224,7 @@ export default function Home({links}: {links: any}) {
             </article>
           </div>
           <div className="point" id="section2">
-            <article id="two">
+            <article id="two"  ref={elem}>
             <h3><b>OFFSET.</b>
         <br/><i>ONCHAIN</i></h3>
             <p>Blockchain technology can keep a secure and transparent ledger for the whole supply chain involved in the creation and tokenisation of carbon assets.</p>

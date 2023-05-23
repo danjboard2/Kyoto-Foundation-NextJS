@@ -5,7 +5,7 @@ ScrollTrigger.defaults({
 var points = gsap.utils.toArray('.point');
 var indicators = gsap.utils.toArray('.indicator');
 
-var height = 100 * points.length;
+var height = 10 * points.length;
 
 gsap.set('.indicators', {display: "flex"});
 
@@ -68,4 +68,3 @@ indicators.forEach( function(indicator, i) {
   })
   
 })
-
