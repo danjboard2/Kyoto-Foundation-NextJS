@@ -31,14 +31,14 @@ export default function App({ Component, pageProps }: AppProps) {
     const script = document.createElement('script');
     script.src = src;
     script.async = true;
-    if (!scriptRefArr.find(item => item.url === src)) {
+    if (!scriptRefArr.find((item: { url:any; }) => item.url === src)) {
       document.body.appendChild(script);
       scriptRefArr.push({ url: src, script })
     }
   }
 
   const removeScript = () => {
-    scriptRefArr.forEach(item => {
+    scriptRefArr.forEach((item: { script:any; }) => {
       if (document.body.contains(item.script)) {
         document.body.removeChild(item.script);
       }
