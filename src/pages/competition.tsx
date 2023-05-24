@@ -50,8 +50,7 @@ export default function Home({links, className}: {links: any, className:any}) {
     <Head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <meta name="keywords" content="Kyoto Foundation" />
-    <meta name="author"	content="Daniel Board" />
-    <title>Kyoto Protocol - Competition</title>
+    <title>Kyoto Protocol - Launch Competition</title>
     <meta property="og:image" content="https://www.kyotoprotocol.io/competition/images/waiting-list-comp.png"/>
     <meta property="og:title" content="Join Our Waiting List Competition - KyotoProtocol.io"/>
     <meta property="og:description" content="Unlock the future of Blockchain Technology with Kyoto Blockchain. Launching 30th June."/>

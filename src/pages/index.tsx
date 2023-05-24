@@ -46,6 +46,21 @@ export default function Home({links, ref}: {links: any, ref: any}) {
 
   if (typeof window !== "undefined") {
   useLayoutEffect(() => {
+    ScrollTrigger.create({
+      trigger: "#hero-block",
+      start: "top top",
+      onEnter:self =>  {
+        $('.menuwrap').addClass('fixed'),
+        $('#background-blur').css("top", "88px")
+      },
+      onLeaveBack: self => {
+        $('.menuwrap').removeClass('fixed'),
+        $('#background-blur').css("top", "0px")
+      }
+      //onToggle: self => console.log("toggled, isActive:", self.isActive),
+      //onUpdate: self => { console.log("progress:", self.progress.toFixed(3), "direction:", self.direction, "velocity", self.getVelocity());}
+      });
+
     const ctx = gsap.context((self) => {
       ScrollTrigger.defaults({
         markers:false
@@ -124,18 +139,16 @@ export default function Home({links, ref}: {links: any, ref: any}) {
 }
   return (
     <>
-      <Script strategy="afterInteractive" src="/js/basicLightbox.min.js" defer></Script>
       <Script strategy="afterInteractive" src="https://player.vimeo.com/api/player.js"></Script>
       <Script strategy="afterInteractive" src="//code.tidio.co/zjoi0ajovrui5txvitkzweydom4tlltp.js"></Script>
      <Head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <meta name="keywords" content="Kyoto Foundation" />
-    <meta name="author"	content="Daniel Board" />
     <title>Kyoto Protocol - Home</title>
     </Head>
     <div id="foundation">
 
-      <Navbar links={links}  />
+      <Navbar links={links} className="" />
       <section id="topbox">
       <Iframe className="bg-video" url="https://player.vimeo.com/video/818970225?h=77fe4aee3e&autoplay=1&loop=1&muted=1&title=0&byline=0&portrait=0&background=1" frameBorder={0} allow="autoplay"/>
         <div className="video-overlay"></div>

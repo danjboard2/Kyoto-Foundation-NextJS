@@ -6,6 +6,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
       <Script strategy="beforeInteractive" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></Script>
+      <Script strategy="afterInteractive" src="/js/basicLightbox.min.js" defer></Script>
   </Head>
       <body>
         <Main />

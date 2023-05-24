@@ -40,6 +40,12 @@ $('.list_item').css({
 $('.list_load').slideUp(300);
 });
 });
+				  $('.head').click(function(){
+					  $(this).toggleClass('active');
+					  $(this).parent().find('.arrow').toggleClass('arrow-animate');
+					  $(this).parent().find('.content').slideToggle(280);
+				  });
+
 	$("a.developers").click(function(event) {
 				basicLightbox.create(`
 				<div class="modal">
