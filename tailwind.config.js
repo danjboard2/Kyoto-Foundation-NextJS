@@ -27,7 +27,8 @@ module.exports = {
         "lightgreen": "#C7E5D3",
         "darkgreen" : "#052C29",   
         'opaque-bg': 'rgba(223, 244, 231, 0.6)',
-        "offyellow" : "#fbff1642"    
+        "offyellow" : "#fbff1642",
+        "secondarylt": "#10433fc7"
     },
     fontSize: {
       'title': ['clamp(30px,3vw,50px)', '100%'],
@@ -40,6 +41,9 @@ module.exports = {
           'sans-serif',
       ],
   },
+  boxShadow: {
+    'inner-lg' : 'inset 1px 1px 10px 2px rgba(0, 0, 0, 0.06);'
+  }
     },
   },
   plugins: [],

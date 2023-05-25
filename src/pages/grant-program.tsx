@@ -45,68 +45,156 @@ charge, in the fight against climate change.</p>
     </div>
       <Image src="/images/logo-window.png" fill style={{objectFit:"contain"}}  alt="Kyoto Foundation Grant Program" className=" z-0 !w-1/2 opacity-50 absolute  !inset-auto !right-[0px] scale-[2]"></Image>
       </section>
-      <section>{/* Planting the seed */}
-      <div>
-        <h2 className="text-2xl font-bold">Planting <span className="italic">the seed</span></h2>
+      <section className="w-full flex flex-row px-28 min-h-[500px] ">{/* Planting the seed */}
+      <div className="w-1/2 px-4 justify-center flex flex-col">
+        <h2 className="text-4xl font-bold  mb-6">Planting <span className="italic">the seed</span></h2>
         <p className="mb-10 text-lg lg:text-xl">Be a part of building an inclusive green economy.</p>
-        <a href="#" className="bg-accent  text-black font-bold py-2 px-4 rounded-full uppercase text-sm md:text-base">Apply now</a>
+        <a href="#"  className="bg-accent w-auto flex self-start text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Apply now</a>
         </div>
-        <div className="w-1/2">
-          <Image src="https://placehold.co/600x400/png" height={300} width={300} alt="Kyoto Foundation Grant Program"></Image>
+        <div className="w-1/2  justify-center flex flex-col">
+          <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center" alt="Kyoto Foundation Grant Program"></Image>
         </div>
       </section>
-      <section>{/* About */}
-      <div>
-      <h2 className="text-2xl font-bold">About</h2>
-        <p className="mb-10 text-lg lg:text-xl">At Kyoto, we are passionately committed to getting trailblazing teams on-chain, who share our unwavering dedication to sustainability, to build on the Kyoto network. We believe that early-stage investments, across various web3 domains, can pave the way for a greener future.</p>
+      <section className="w-full flex flex-row px-28 min-h-[500px] ">{/* About */}
+      <div className="w-1/2 px-4 justify-center flex flex-col">
+      <h2 className="text-4xl font-bold mb-6">About</h2>
+        <p className="mb-6 text-lg lg:text-xl">At Kyoto, we are passionately committed to getting trailblazing teams on-chain, who share our unwavering dedication to sustainability, to build on the Kyoto network. We believe that early-stage investments, across various web3 domains, can pave the way for a greener future.</p>
 
-        <p className="mb-10 text-lg lg:text-xl">Embracing a unified approach, we back founders on their journey to success by offering comprehensive support that goes beyond simple funding. Leveraging the operational prowess,
+        <p className="mb-6 text-lg lg:text-xl">Embracing a unified approach, we back founders on their journey to success by offering comprehensive support that goes beyond simple funding. Leveraging the operational prowess,
           technological expertise, extensive distribution networks, and strategic partnerships within the Kyoto
           Ecosystem, we provide an unparalleled foundation for powerful growth and achievement.</p>
 
-          <p className="mb-10 text-lg lg:text-xl">We invite you to join our vibrant community, where we join forces to forge a generational impact,
+          <p className="mb-6 text-lg lg:text-xl">We invite you to join our vibrant community, where we join forces to forge a generational impact,
           through the transformative potential of blockchain technology.</p>
 
-          <p className="mb-10 text-lg lg:text-xl">Together, let's shape a sustainable world that transcends boundaries and empowers future
+          <p className="mb-6 text-lg lg:text-xl">Together, let's shape a sustainable world that transcends boundaries and empowers future
           generations.</p>
           </div>
-          <div>
-          <Image src="https://placehold.co/600x400/png" height={300} width={300} alt="Kyoto Foundation Grant Program"></Image>
+          <div className="w-1/2  justify-center flex flex-col">
+          <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center" alt="Kyoto Foundation Grant Program"></Image>
         </div>
       </section>
-      <section>{/* Partner portfolio */}
-      <h2 className="text-2xl font-bold">Our partner portfolio</h2>
-        <p className="mb-10 text-lg lg:text-xl">Carousel here.</p>
+      <section className="w-full flex flex-col px-32 py-20 mt-20 min-h-[500px] bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300">{/* Partner portfolio */}
+      <h2 className="text-4xl font-bold mb-10">Our partner <span className="italic">portfolio</span></h2>
+        <div className="w-full flex flex-row justify-between">
+          <div className="w-[24%] min-h-[200px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center"><p className="text-lg lg:text-xl">Partner</p></div>
+          <div className="w-[24%] min-h-[200px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center"><p className="text-lg lg:text-xl">Partner</p></div>
+          <div className="w-[24%] min-h-[200px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center"><p className="text-lg lg:text-xl">Partner</p></div>
+          <div className="w-[24%] min-h-[200px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center"><p className="text-lg lg:text-xl">Partner</p></div>
+        </div>
       </section>
-      <section>{/* What founders say about us */}
-      <h2 className="text-2xl font-bold">What founders say about us</h2>
-        <p className="mb-10 text-lg lg:text-xl">Another carousel here.</p>
+      <section className="w-full flex flex-col px-32 py-10 pb-28 mt-20 min-h-[500px] place-content-center">{/* What founders say about us */}
+      <h2 className="text-4xl font-bold mb-10">What founders say <span className="italic">about us</span></h2>
+      <div className="w-full flex flex-row justify-between items-center">
+      <div className="w-[24%] h-[300px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center opacity-40">Founder quote</div>
+          <div className="w-[44%] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex flex-col p-20 items-center justify-center">
+          <p className="mb-6 text-lg lg:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum augue ut ullamcorper lacinia. Sed sit amet efficitur urna. Etiam laoreet sodales ligula, a scelerisque lacus dignissim at. Phasellus nec massa nec velit faucibus malesuada et ac purus.</p>
+          <p className="mb-0 text-lg lg:text-xl">Proin non ligula ut nibh finibus porta id vitae lacus. Nulla facilisi. Etiam eget consectetur quam. Morbi non turpis ac justo molestie malesuada ut elementum sem. Mauris commodo semper magna nec auctor. Vestibulum eu nisi vitae metus finibus lobortis sit amet sit amet magna.</p>
+          <p className="mt-6 text-lg lg:text-xl w-full"><strong className=" font-bold">- Important Founder Person</strong></p>
+          </div>
+          <div className="w-[24%] h-[300px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center opacity-40">Founder quote</div>
+        </div>
       </section>
-      <section> {/* gain competitive advantage */ }
-      <p className="mb-10 text-lg lg:text-xl">Gain a competitive edge in the market and unlock new, green possibilities for your business, via the Kyoto blockchain today.</p>
-        <a href="#" className="">Apply now</a>
-      </section>
-      <section> {/* our team of eco-warriors */}
-      <h2 className="text-2xl font-bold">Our team of Eco-Warriors</h2>
-      </section>
-      <section> {/* Curated thinking */}
-      <div>
-      <h2 className="text-2xl font-bold">Curated thinking</h2>
+      <section className="bg-secondarylt flex flex-row w-full py-6 shadow-inner shadow-gray-800"> {/* gain competitive advantage */ }
+      <div className="w-1/2 flex items-center justify-center">
+        <p className="flex font-medium ml-32 text-white text-lg lg:text-xl">Gain a competitive edge in the market and unlock new, green possibilities for your business, via the Kyoto blockchain today.</p>
       </div>
-      <div>
-        Article
-      </div>
-      <div>
-        Article
-      </div>
-      <div>
-        Article
+      <div className="w-1/2 flex items-center justify-center">
+      <a href="#" className="bg-accent w-auto inline-flex center text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Apply now</a>
       </div>
       </section>
-      <section> {/* Connect with a blockchain expert */}
-        <h3>Connect with a blockchain expert</h3>
-        <p className="mb-10 text-lg lg:text-xl">Book a 1-on-1 consultation to learn how you can use the world’s most advanced blockchain expertise, technology and ecosystem.</p>
-        <a href="#" className="">Apply now</a>
+      <section className="w-full flex flex-col px-32 pt-20 min-h-[500px]"> {/* our team of eco-warriors */}
+      <h2 className="text-4xl font-bold mb-10">Our team <span className="italic">of Eco-Warriors</span></h2>
+      <div className="flex w-full flex-row justify-between">
+        <div className="flex flex-row w-[49.5%] justify-between flex-wrap">
+          <div className="w-[32%]">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%]">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%]">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%] mt-6">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%] mt-6">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%]  mt-6">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+        </div>
+        {/* Second block of team members */}
+        <div className="flex flex-row w-[49.5%] justify-between flex-wrap">
+          <div className="w-[32%]">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%]">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%]">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%] mt-6">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%] mt-6">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+          <div className="w-[32%]  mt-6">
+            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <p className="text-xl font-medium">Firstname Surname</p>
+            <p className="text-base">Founder and CEO</p>
+          </div>
+        </div>
+      </div>
+      </section>
+      <section className="w-full flex flex-col px-32 pt-20 min-h-[500px]"> {/* Curated thinking */}
+      <h2 className="text-4xl font-bold mb-10">Curated <span className="italic">thinking</span></h2>
+      <div className="flex flex-row w-full justify-between">
+          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white">
+            Connect to Builder API...
+          </div>
+          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white">
+          Connect to Builder API...
+          </div>
+          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white">
+          Connect to Builder API...
+          </div>
+      </div>
+      </section>
+      <section className="w-full flex flex-row px-32 py-10 mt-20 mb-20 bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300 border-b-[30px] border-secondarylt"> {/* Connect with a blockchain expert */}
+      <div className="flex w-1/2 flex-col">
+      <h3 className="text-3xl font-bold mb-4">Connect with a blockchain expert</h3>
+        <p className="mb-0 text-lg lg:text-xl">Book a 1-on-1 consultation to learn how you can use the world’s most advanced blockchain expertise, technology and ecosystem.</p>
+        </div>
+        <div className="flex w-1/2 items-center justify-center">
+        <a href="#" className="bg-accent w-auto inline-flex center text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Let's talk</a>
+        </div>
       </section>
       <Footer />
     </div>
