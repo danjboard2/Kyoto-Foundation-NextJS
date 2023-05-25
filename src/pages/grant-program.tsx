@@ -52,7 +52,7 @@ charge, in the fight against climate change.</p>
         <a href="#"  className="bg-accent w-auto flex self-start text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Apply now</a>
         </div>
         <div className="w-1/2  justify-center flex flex-col">
-          <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center" alt="Kyoto Foundation Grant Program"></Image>
+          <Image src="https://placehold.co/600x400/png" height={300} width={500} className="self-center" alt="Kyoto Foundation Grant Program"></Image>
         </div>
       </section>
       <section className="w-full flex flex-row px-28 min-h-[500px] ">{/* About */}
@@ -71,7 +71,7 @@ charge, in the fight against climate change.</p>
           generations.</p>
           </div>
           <div className="w-1/2  justify-center flex flex-col">
-          <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center" alt="Kyoto Foundation Grant Program"></Image>
+          <Image src="https://placehold.co/600x400/png" height={300} width={500} className="self-center" alt="Kyoto Foundation Grant Program"></Image>
         </div>
       </section>
       <section className="w-full flex flex-col px-32 py-20 mt-20 min-h-[500px] bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300">{/* Partner portfolio */}
@@ -108,32 +108,32 @@ charge, in the fight against climate change.</p>
       <div className="flex w-full flex-row justify-between">
         <div className="flex flex-row w-[49.5%] justify-between flex-wrap">
           <div className="w-[32%]">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%]">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%]">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%] mt-6">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%] mt-6">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%]  mt-6">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
@@ -141,32 +141,32 @@ charge, in the fight against climate change.</p>
         {/* Second block of team members */}
         <div className="flex flex-row w-[49.5%] justify-between flex-wrap">
           <div className="w-[32%]">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%]">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%]">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%] mt-6">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%] mt-6">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
           <div className="w-[32%]  mt-6">
-            <Image src="https://placehold.co/600x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
+            <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
             <p className="text-xl font-medium">Firstname Surname</p>
             <p className="text-base">Founder and CEO</p>
           </div>
@@ -176,13 +176,13 @@ charge, in the fight against climate change.</p>
       <section className="w-full flex flex-col px-32 pt-20 min-h-[500px]"> {/* Curated thinking */}
       <h2 className="text-4xl font-bold mb-10">Curated <span className="italic">thinking</span></h2>
       <div className="flex flex-row w-full justify-between">
-          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white">
+          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white text-lg">
             Connect to Builder API...
           </div>
-          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white">
+          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white text-lg">
           Connect to Builder API...
           </div>
-          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white">
+          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white text-lg">
           Connect to Builder API...
           </div>
       </div>
