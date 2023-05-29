@@ -92,10 +92,10 @@ export default function Home({links, className}: {links: any, className:any}) {
 
 <section id="steps">
 	<div className="step-wrap">
-	<div className="step"><figure><img src="images/step1.png"/></figure><p><span>1 </span>Sign up to our waiting list</p></div>
-	<div className="step"><figure><img src="images/step2.png"/></figure><p><span>2 </span>Receive unique referral code/link</p></div>
-	<div className="step"><figure><img src="images/step3.png"/></figure><p><span>3 </span>Climb the leaderboard by referring more people</p></div>
-	<div className="step"><figure><img src="images/step4.png"/></figure><p><span>4 </span>Be on top of the leaderboard to earn rewards</p></div>
+	<div className="step"><figure className="mb-6"><img src="images/step1.png"/></figure><p><span>1 </span>Sign up to our waiting list</p></div>
+	<div className="step"><figure className="mb-6"><img src="images/step2.png"/></figure><p><span>2 </span>Receive unique referral code/link</p></div>
+	<div className="step"><figure className="mb-6"><img src="images/step3.png"/></figure><p><span>3 </span>Climb the leaderboard by referring more people</p></div>
+	<div className="step"><figure className="mb-6"><img src="images/step4.png"/></figure><p><span>4 </span>Be on top of the leaderboard to earn rewards</p></div>
 	</div>
 	<p>Participants will be rewarded according to their placement in one of our four reward Tiers, each giving special rewards in BUSD and exclusive merchandise. Our goal is to revolutionize the world of decentralized technology with Kyoto Blockchain, so spread the word as participants of the invite competition will also be granted early access to our technology stack.</p>
 	<div id="rewards"></div>
