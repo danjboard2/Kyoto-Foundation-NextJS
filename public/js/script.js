@@ -62,7 +62,7 @@ $('.list_load').slideUp(300);
 		event.preventDefault();
 	
 	});
-	$("a.terms").click(function() {
+	$("a.terms").click(function(event) {
 		basicLightbox.create(`
 		<div class="modal" id="terms">
 			<a class="close"><p>X</p></a>
@@ -79,11 +79,11 @@ $('.list_load').slideUp(300);
 		<li>Subscribers 2-10 will receive = 200 BUSD + Kyoto Hoodie (Worth 80 BUSD)</li>
 		<li>Subscribers 11-50 will receive = 100 BUSD</li>
 		<li>Subscribers 51 - 1000 will receive = 10 BUSD</li>
-		<li>6. Reward Fulfillment: Participants who reach a reward tier will receive an email notification within 30 days of the Competition ending. Participants must respond to the email within 7 days to claim their reward. The rewards are non-transferable and cannot be exchanged for cash.</li>
-		<li>7. Competition Start and End date: The Waiting list competition will launch on the 5th of May 2023 and will run until the 30th of June 2023.</li>
-		<li>8. Competition Sign-Up Abuse: Kyoto Protocol reserves the right to disqualify and remove any emails that are known to be duplicates or fake.</li>
-		<li>9. Competition Changes: Kyoto Protocol reserves the right to modify or terminate the Competition at any time for any reason. Kyoto Protocol also reserves the right to disqualify any Participant for fraudulent or abusive behavior.</li>
-		<li>10. Privacy: Participants’ personal information will be used in accordance with Kyoto Protocol’s privacy policy.
+		<li>Reward Fulfillment: Participants who reach a reward tier will receive an email notification within 30 days of the Competition ending. Participants must respond to the email within 7 days to claim their reward. The rewards are non-transferable and cannot be exchanged for cash.</li>
+		<li>Competition Start and End date: The Waiting list competition will launch on the 5th of May 2023 and will run until the 30th of June 2023.</li>
+		<li>Competition Sign-Up Abuse: Kyoto Protocol reserves the right to disqualify and remove any emails that are known to be duplicates or fake.</li>
+		<li>Competition Changes: Kyoto Protocol reserves the right to modify or terminate the Competition at any time for any reason. Kyoto Protocol also reserves the right to disqualify any Participant for fraudulent or abusive behavior.</li>
+		<li>Privacy: Participants’ personal information will be used in accordance with Kyoto Protocol’s privacy policy.
 		<li>By participating in the Competition, Participants agree to these terms and conditions.</li>
 	</ul>
 </div>
@@ -94,7 +94,7 @@ onShow: (instance) => {
 }).show();
 event.preventDefault();
 });
-$("a.thanks").click(function() {
+$("a.thanks").click(function(event) {
 		basicLightbox.create(`
 		<div class="modal" id="thanks">
 			<a class="close"><p>X</p></a>

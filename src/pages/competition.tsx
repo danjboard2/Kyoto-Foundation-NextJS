@@ -75,7 +75,7 @@ export default function Home({links, className}: {links: any, className:any}) {
 				</div>
 				<div className="text">
 					<h1>JOIN OUR<br/><span>WAITING LIST</span><br/>COMPETITION</h1>
-					<p>Join our waiting list competition for the Kyoto Blockchain - A carbon negative blockchain built to scale the Volutary Carbon Market and Regenerative Finance.<br/><br/>Win up to 1000 BUSD.</p>
+					<p>Join our waiting list competition for the Kyoto Blockchain, the first carbon-negative blockchain built to scale the Voluntary Carbon Market and Regenerative Finance.<br/><br/>Refer your friends and win up to 1000 BUSD!</p>
 					<a href="#rewards" className="butn"><span>Explore rewards</span></a>
 				</div>
 				<div id="maitre-widget"></div>
@@ -87,52 +87,51 @@ export default function Home({links, className}: {links: any, className:any}) {
 <section id="fast">
 	<div className="slogan">
 <h2>THE <span>PROCESS</span></h2></div>
-<p>The waiting list competition invites people to sign up for the waiting list for a chance to receive a referral code/link to share with their network. Every person who signs up using the referral code/link will increase the referrer’s position on the waiting list, increasing their chances of winning up-to 1000 BUSD. Please note that your position is not permanent and you may move down the waiting list. To maintain or improve your position, it is necessary to keep referring people and actively participate in the competition leaderboard.</p>
+<p>Sign up for our waiting list and receive a referral code/link to share with your network. Every successful sign-up that uses your referral code increases your position on the invite leaderboard and your chances of winning up to 1000 BUSD. Please note that your position will change as other users invite their networks. Keep referring people and actively participate in the contest to secure your position and chances to win a reward.</p>
 </section>
 
 <section id="steps">
 	<div className="step-wrap">
-	<div className="step"><figure><img src="images/step1.png"/></figure><p><span>1 </span>Sign Up to Our Waiting List</p></div>
-	<div className="step"><figure><img src="images/step2.png"/></figure><p><span>2 </span>Receive Unique Referral Code/Link</p></div>
-	<div className="step"><figure><img src="images/step3.png"/></figure><p><span>3 </span>Refer More People, Climb the Ladder</p></div>
-	<div className="step"><figure><img src="images/step4.png"/></figure><p><span>4 </span>Top the Ladders to Earn Rewards</p></div>
+	<div className="step"><figure><img src="images/step1.png"/></figure><p><span>1 </span>Sign up to our waiting list</p></div>
+	<div className="step"><figure><img src="images/step2.png"/></figure><p><span>2 </span>Receive unique referral code/link</p></div>
+	<div className="step"><figure><img src="images/step3.png"/></figure><p><span>3 </span>Climb the leaderboard by referring more people</p></div>
+	<div className="step"><figure><img src="images/step4.png"/></figure><p><span>4 </span>Be on top of the leaderboard to earn rewards</p></div>
 	</div>
-	<p>The competition has four reward tiers for top referrers, offering exclusive merchandise and early access to the platform. The goal is to revolutionize the world of decentralized technology with Kyoto Blockchain, and everyone is invited to join the waiting list competition to spread the word.</p>
+	<p>Participants will be rewarded according to their placement in one of our four reward Tiers, each giving special rewards in BUSD and exclusive merchandise. Our goal is to revolutionize the world of decentralized technology with Kyoto Blockchain, so spread the word as participants of the invite competition will also be granted early access to our technology stack.</p>
 	<div id="rewards"></div>
 </section>
 
 <section id="fast" className="waiting">
 	<div className="slogan">
-<h2>Waiting <span>Tier List</span></h2></div>
-<p>Our Waiting List Competition has four reward tiers for the top referrers based on the leaderboard of successful referrals.</p>
+<h2>Competition <span>Tier List</span></h2></div>
 </section>
 
 <section id="steps" className="tiers">
 	<div className="step-wrap">
 		<div className="step">
 			<h4>Tier 1<br/>1</h4>
-			<p>Position 1 on the waiting list receives:</p>
+			<p>#1 placement receives</p>
 			<ul>
 				<li>{'\u2022'}{'\u00A0'}1000 BUSD + Kyoto Hoodie (worth 80 BUSD)</li>
 			</ul>
 		</div>
 		<div className="step">
 			<h4>Tier 2<br/>2-10</h4>
-			<p>Waiting list position 2-10 receive:</p>
+			<p>#2-10 placements receive</p>
 			<ul>
 				<li>{'\u2022'}{'\u00A0'}200 BUSD + Kyoto Hoodie (worth 80 BUSD)</li>
 			</ul>
 		</div>
 		<div className="step">
 			<h4>Tier 3<br/>11-50</h4>
-			<p>Waiting list position 11-50 receive:</p>
+			<p>#11-50 placements receive</p>
 			<ul>
 				<li>{'\u2022'}{'\u00A0'}100 BUSD</li>
 			</ul>
 		</div>
 		<div className="step">
 			<h4>Tier 4<br/>51-1000</h4>
-			<p>Waiting list position 51-1000 receive:</p>
+			<p>#51-1000 placements receive</p>
 			<ul>
 				<li>{'\u2022'}{'\u00A0'}10 BUSD</li>
 			</ul>
@@ -140,7 +139,7 @@ export default function Home({links, className}: {links: any, className:any}) {
 	</div>
 	<Link className="butn" href="#foundation">Sign Up Now</Link>
 </section>
-<p className="terms"><small>View competition <Link href="#" className="terms">terms and conditions.</Link></small></p>
+<p className="terms"><small>View competition <Link href="#terms" className="terms">terms and conditions.</Link></small></p>
 </div>
       <Footer />
     </div>
