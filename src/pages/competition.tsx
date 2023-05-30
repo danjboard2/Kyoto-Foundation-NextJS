@@ -45,8 +45,6 @@ export default function Home({links, className}: {links: any, className:any}) {
    src="/js/comp-script.js"
  />  
       <Script strategy="afterInteractive" src="/js/basicLightbox.min.js" defer></Script>
-      <Script strategy="afterInteractive" src="https://player.vimeo.com/api/player.js"></Script>
-      <Script strategy="afterInteractive" src="//code.tidio.co/zjoi0ajovrui5txvitkzweydom4tlltp.js"></Script>
     <Head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <meta name="keywords" content="Kyoto Foundation" />

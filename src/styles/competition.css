@@ -10,7 +10,7 @@ body #foundation.comp #background-blur {
 /* modal */
 
 #terms.modal {color: #fff;}
-#terms.modal .close, #thanks.modal .close {background: #577a78;display:inline-block;float:right;text-align:center;height:40px;width:40px;border-radius: 5px;cursor: pointer;}
+#terms.modal .close, #thanks.modal .close {background: #577a78;display:block;float:right;text-align:center;height:40px;width:40px;border-radius: 5px;cursor: pointer;}
 #terms.modal .close p,  #thanks.modal .close p {float:right;color:#fff;font-weight:bold;text-align:center;width: 40px;margin: 0 auto;font-size: 20px;line-height: 38px;}
 #terms.modal ul, #thanks.modal ul {width:60%; margin:0 auto; padding:40px 0px}
 #terms.modal ul li, #thanks.modal ul li {list-style: decimal;margin-bottom: 12px;font-size: 12px;font-weight: 300;text-align: left;}
