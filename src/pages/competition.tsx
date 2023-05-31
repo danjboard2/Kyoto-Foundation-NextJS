@@ -64,7 +64,7 @@ export default function Home({links, className}: {links: any, className:any}) {
 				<div className="socials">
 					<div className="socials">
 						<a href="https://discord.gg/kyotoprotocol" target="_blank"><figure><Image src="/images/social/discord-footer.png" fill style={{objectFit:"contain"}}  alt="Social logo"/></figure></a>
-						<a href="https://twitter.com/official_kpio" target="_blank"><figure><Image src="/images/social/twitter-footer.png" fill style={{objectFit:"contain"}}  alt="Social logo"/></figure></a>
+						<a href="https://twitter.com/KyotoRefi" target="_blank"><figure><Image src="/images/social/twitter-footer.png" fill style={{objectFit:"contain"}}  alt="Social logo"/></figure></a>
 						<a href="https://medium.com/@KyotoProtocol.io" target="_blank"><figure><Image src="/images/social/medium-footer.png" fill style={{objectFit:"contain"}}  alt="Social logo"/></figure></a>
 						<a href="https://www.youtube.com/channel/UCIijeBIESm9rnnckEwbU14g" target="_blank"><figure><Image src="/images/social/youtube-footer.png" fill style={{objectFit:"contain"}}  alt="Social logo"/></figure></a>
 						<a href="https://t.me/KyotoProtocol" target="_blank"><figure><Image src="/images/social/telegram-footer.png" fill style={{objectFit:"contain"}}  alt="Social logo"/></figure></a>

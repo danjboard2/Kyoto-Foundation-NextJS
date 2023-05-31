@@ -92,7 +92,7 @@ div#scrolling {padding-top: 88px;}
 .dot.active {
   background: #000;
 }
-
+.keen-slider:not([data-keen-slider-disabled]) .keen-slider__slide {min-height:auto !important;}
 .arrow {
   width: 30px;
   height: 30px;
@@ -103,7 +103,7 @@ div#scrolling {padding-top: 88px;}
   fill: #fff;
   cursor: pointer;
 }
-
+.arrow.grants {fill:#c7e5d4}
 .arrow--left {
   left: 5px;
   z-index:20;
@@ -117,6 +117,9 @@ div#scrolling {padding-top: 88px;}
 
 .arrow--disabled {
   fill: rgba(255, 255, 255, 0.5);
+}
+.arrow.grants.arrow--disabled {
+  fill: #d0d8d3;
 }
 .builder-text {font-family: 'Interstate', sans-serif; font-size:20px; font-weight:200}
 .builder-blocks .builder-text p, .builder-blocks .builder-text h1, .builder-blocks .builder-text a, .builder-blocks .builder-text span, .builder-blocks .builder-text li, .builder-blocks .builder-text h2, .builder-blocks .builder-text h3, .builder-blocks .builder-text h4, .builder-blocks .builder-text h5, .builder-blocks .builder-text h6, .builder-blocks .builder-text strong, .builder-blocks .builder-text {color: #052c29}

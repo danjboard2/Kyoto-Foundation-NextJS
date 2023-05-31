@@ -2,35 +2,100 @@ import Image from 'next/image'
 import Head from 'next/head';
 import Script from 'next/script'
 import Link from 'next/link';
+import dynamic from "next/dynamic";
+const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
+  ssr: false,
+});
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
-import React, { useLayoutEffect, useRef } from 'react';
+import PastReportsGrants from '../../components/PastReportsGrants'
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { BuilderComponent, builder, useIsPreviewing, Builder } from '@builder.io/react';
+import { useKeenSlider } from 'keen-slider/react'
 builder.init('05829d3eace9455893e1d144d2d4a91a');
+const articlesPerPage = 30;
+/*
+  Initialize the Builder SDK with your organization's API Key
+  The API Key can be found on: https://builder.io/account/settings
+*/
 export async function getStaticProps() {
+  const articles = await builder.getAll("article", {
+    // Include references, like our `author` ref
+    options: { includeRefs: true },
+    // For performance, don't pull the `blocks` (the full blog entry content)
+    // when listing
+    omit: "data.blocks",
+    limit: articlesPerPage,
+  });
+
+  /*
+    Fetch the first page from Builder that matches the current URL.
+    The `userAttributes` field is used for targeting content,
+    learn more here: https://www.builder.io/c/docs/targeting-with-builder
+  */
     const links = await builder.get('nav-links', {
+      // You can use options for queries, sorting, and targeting here
+      // https://github.com/BuilderIO/builder/blob/main/packages/core/docs/interfaces/GetContentOptions.md
     }).promise();
+    
+
   return {
     props: {
+      articles,
       links: links || null,
     },
     revalidate: 5,
   };
 }
 
-export default function Home({links, ref}: {links: any, ref: any}) {
+export default function Home({links, ref, articles}: {links: any, ref: any, articles:any}) {
 
   if (typeof window !== "undefined") {
   useLayoutEffect(() => {
    //effect stuff if needed
     }, []); // <- Scope!
 }
+
+const [currentSlide, setCurrentSlide] = React.useState(0)
+const [loaded, setLoaded] = useState(false)
+const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+  {
+    breakpoints: {
+      "(min-width: 800px)": {
+        slides: { perView: 2, spacing: 40 },
+      },
+      "(min-width: 1000px)": {
+        slides: { perView: 3, spacing: 40 },
+      },
+      "(min-width: 1200px)": {
+        slides: { perView: 4, spacing: 80 },
+      },
+    },
+    slides: {
+      perView: 1,
+      spacing: 20,
+    },
+    initial: -1,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel)
+    },
+    created() {
+      setLoaded(true)
+    },
+  },
+  [
+    // add plugins here
+  ]
+)
   return (
     <>
+          <Script strategy="afterInteractive" src="/js/slider.js"></Script>
      <Head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <meta name="keywords" content="Kyoto Foundation" />
-    <title>Kyoto Protocol - Grants Program</title>
+    <title>Kyoto Protocol - Grant Program</title>
     </Head>
     <div id="pages">
     <div id="foundation"  className="comp">
@@ -45,17 +110,18 @@ charge, in the fight against climate change.</p>
     </div>
       <Image src="/images/logo-window.png" fill style={{objectFit:"contain"}}  alt="Kyoto Foundation Grant Program" className=" z-0 !w-1/2 opacity-50 absolute  !inset-auto !right-[0px] scale-[2]"></Image>
       </section>
-      <section className="w-full flex flex-row px-28 min-h-[500px] ">{/* Planting the seed */}
+      <section className="w-full flex flex-row px-2 lg:px-16 xl:px-28 min-h-[500px] ">{/* Planting the seed */}
       <div className="w-1/2 px-4 justify-center flex flex-col">
         <h2 className="text-4xl font-bold  mb-6">Planting <span className="italic">the seed</span></h2>
         <p className="mb-10 text-lg lg:text-xl">Be a part of building an inclusive green economy.</p>
         <a href="#"  className="bg-accent w-auto flex self-start text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Apply now</a>
         </div>
-        <div className="w-1/2  justify-center flex flex-col">
-          <Image src="https://placehold.co/600x400/png" height={300} width={500} className="self-center" alt="Kyoto Foundation Grant Program"></Image>
+        <div className="w-[650px] h-[500px] ml-8 justify-center flex flex-col overflow-hidden scale-[65%]">
+        <script src="https://player.vimeo.com/api/player.js"></script>
+        <iframe src="https://player.vimeo.com/video/832069314?h=d90940c6ad&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1" width="600" height="600"  className=" ml-2 pt-12 scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
         </div>
       </section>
-      <section className="w-full flex flex-row px-28 min-h-[500px] ">{/* About */}
+      <section className="w-full flex flex-row  px-2 lg:px-16 xl:px-28 min-h-[500px] ">{/* About */}
       <div className="w-1/2 px-4 justify-center flex flex-col">
       <h2 className="text-4xl font-bold mb-6">About</h2>
         <p className="mb-6 text-lg lg:text-xl">At Kyoto, we are passionately committed to getting trailblazing teams on-chain, who share our unwavering dedication to sustainability, to build on the Kyoto network. We believe that early-stage investments, across various web3 domains, can pave the way for a greener future.</p>
@@ -70,29 +136,134 @@ charge, in the fight against climate change.</p>
           <p className="mb-6 text-lg lg:text-xl">Together, let's shape a sustainable world that transcends boundaries and empowers future
           generations.</p>
           </div>
-          <div className="w-1/2  justify-center flex flex-col">
-          <Image src="https://placehold.co/600x400/png" height={300} width={500} className="self-center" alt="Kyoto Foundation Grant Program"></Image>
+          <div className="w-[650px] h-[500px] ml-8 justify-center flex flex-col overflow-hidden scale-[85%]">
+            <iframe src="https://player.vimeo.com/video/832056257?h=b810376e63&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1" width="600" height="600" className=" ml-8 pt-12 scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
         </div>
       </section>
-      <section className="w-full flex flex-col px-32 py-20 mt-20 min-h-[500px] bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300">{/* Partner portfolio */}
+      <section className="w-full flex flex-col  px-6 lg:px-20 xl:px-32 py-20 mt-20 min-h-[500px] bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300">{/* Partner portfolio */}
       <h2 className="text-4xl font-bold mb-10">Our partner <span className="italic">portfolio</span></h2>
         <div className="w-full flex flex-row justify-between">
-          <div className="w-[24%] min-h-[200px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center"><p className="text-lg lg:text-xl">Partner</p></div>
-          <div className="w-[24%] min-h-[200px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center"><p className="text-lg lg:text-xl">Partner</p></div>
-          <div className="w-[24%] min-h-[200px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center"><p className="text-lg lg:text-xl">Partner</p></div>
-          <div className="w-[24%] min-h-[200px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center"><p className="text-lg lg:text-xl">Partner</p></div>
+        <section className="flex flex-col w-full items-center justify-center border-2 border-white rounded-xl overflow-hidden relative">
+      <div className='flex w-[80%] md:w-[90%] my-10'>
+      <div ref={sliderRef} className="keen-slider flex flex-row h-full">
+        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+              <div className='mx-4 pt-4'>
+              <p className="text-base text-primary font-semibold">Content</p>
+              </div>
+              <div className=' mx-4 '>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              </div>
+        </div>
+        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+              <div className='mx-4 pt-4'>
+              <p className="text-base text-primary font-semibold">Content</p>
+              </div>
+              <div className=' mx-4 '>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              </div>
+        </div>
+        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+              <div className='mx-4 pt-4'>
+              <p className="text-base text-primary font-semibold">Content</p>
+              </div>
+              <div className=' mx-4 '>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              </div>
+        </div>
+        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+              <div className='mx-4 pt-4'>
+              <p className="text-base text-primary font-semibold">Content</p>
+              </div>
+              <div className=' mx-4 '>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              </div>
+        </div>
+        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+              <div className='mx-4 pt-4'>
+              <p className="text-base text-primary font-semibold">Content</p>
+              </div>
+              <div className=' mx-4 '>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              </div>
+        </div>
+      </div>
+      {loaded && instanceRef.current &&
+         (
+          <>
+            <Arrow
+              left
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              disabled={currentSlide === 0}
+            />
+
+            <Arrow
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+             disabled={
+                currentSlide ===
+                instanceRef.current.track.details.slides.length - 1
+              } 
+            />
+          </>
+        )
+            }
+      </div>
+      </section>
         </div>
       </section>
-      <section className="w-full flex flex-col px-32 py-10 pb-28 mt-20 min-h-[500px] place-content-center">{/* What founders say about us */}
+      <section className="w-full flex flex-col px-6 lg:px-20 xl:px-32 py-10 pb-28 mt-20 min-h-[500px] place-content-center">{/* What founders say about us */}
       <h2 className="text-4xl font-bold mb-10">What founders say <span className="italic">about us</span></h2>
       <div className="w-full flex flex-row justify-between items-center">
-      <div className="w-[24%] h-[300px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center opacity-40">Founder quote</div>
-          <div className="w-[44%] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex flex-col p-20 items-center justify-center">
-          <p className="mb-6 text-lg lg:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse interdum augue ut ullamcorper lacinia. Sed sit amet efficitur urna. Etiam laoreet sodales ligula, a scelerisque lacus dignissim at. Phasellus nec massa nec velit faucibus malesuada et ac purus.</p>
-          <p className="mb-0 text-lg lg:text-xl">Proin non ligula ut nibh finibus porta id vitae lacus. Nulla facilisi. Etiam eget consectetur quam. Morbi non turpis ac justo molestie malesuada ut elementum sem. Mauris commodo semper magna nec auctor. Vestibulum eu nisi vitae metus finibus lobortis sit amet sit amet magna.</p>
-          <p className="mt-6 text-lg lg:text-xl w-full"><strong className=" font-bold">- Important Founder Person</strong></p>
-          </div>
-          <div className="w-[24%] h-[300px] bg-white shadow-inner-lg shadow-gray-300 rounded-lg flex items-center justify-center opacity-40">Founder quote</div>
+      <section className="testimonials w-full">
+	<div className="w-full block">
+  <div className="row">
+        <div className="w-full">
+          <div id="customers-testimonials" className="owl-carousel !block">
+<OwlCarousel center margin={5}>
+            <div className="item">
+              <div className="shadow-effect">
+                <img className="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div className="testimonial-name">- Founder</div>
+            </div>
+            <div className="item">
+              <div className="shadow-effect">
+                <img className="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div className="testimonial-name">- Founder</div>
+            </div>
+            <div className="item">
+              <div className="shadow-effect">
+                <img className="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div className="testimonial-name">- Founder</div>
+            </div>
+            <div className="item">
+              <div className="shadow-effect">
+                <img className="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div className="testimonial-name">- Founder</div>
+            </div>
+            <div className="item">
+              <div className="shadow-effect">
+                <img className="img-circle" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+              </div>
+              <div className="testimonial-name">- Founder</div>
+            </div>
+</OwlCarousel>
+</div>
+        </div>
+      </div>
+</div>
+    </section>
         </div>
       </section>
       <section className="bg-secondarylt flex flex-row w-full py-6 shadow-inner shadow-gray-800"> {/* gain competitive advantage */ }
@@ -103,7 +274,7 @@ charge, in the fight against climate change.</p>
       <a href="#" className="bg-accent w-auto inline-flex center text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Apply now</a>
       </div>
       </section>
-      <section className="w-full flex flex-col px-32 pt-20 min-h-[500px]"> {/* our team of eco-warriors */}
+      <section className="w-full flex flex-col px-6 lg:px-20 xl:px-32 pt-20 min-h-[500px]"> {/* our team of eco-warriors */}
       <h2 className="text-4xl font-bold mb-10">Our team <span className="italic">of Eco-Warriors</span></h2>
       <div className="flex w-full flex-row justify-between">
         <div className="flex flex-row w-[49.5%] justify-between flex-wrap">
@@ -173,21 +344,13 @@ charge, in the fight against climate change.</p>
         </div>
       </div>
       </section>
-      <section className="w-full flex flex-col px-32 pt-20 min-h-[500px]"> {/* Curated thinking */}
+      <section className="w-full flex flex-col px-6 lg:px-20 xl:px-32 pt-20"> {/* Curated thinking */}
       <h2 className="text-4xl font-bold mb-10">Curated <span className="italic">thinking</span></h2>
-      <div className="flex flex-row w-full justify-between">
-          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white text-lg">
-            Connect to Builder API...
-          </div>
-          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white text-lg">
-          Connect to Builder API...
-          </div>
-          <div className="w-[32%] min-h-[300px] bg-secondary rounded-lg flex items-center justify-center font-bold text-white text-lg">
-          Connect to Builder API...
-          </div>
+      <div className="flex flex-row w-full">
+      <PastReportsGrants articles={articles} options/>
       </div>
       </section>
-      <section className="w-full flex flex-row px-32 py-10 mt-20 mb-20 bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300 border-b-[30px] border-secondarylt"> {/* Connect with a blockchain expert */}
+      <section className="w-full flex flex-row px-6 lg:px-20 xl:px-32 py-10 mt-20 mb-20 bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300 border-b-[30px] border-secondarylt"> {/* Connect with a blockchain expert */}
       <div className="flex w-1/2 flex-col">
       <h3 className="text-3xl font-bold mb-4">Connect with a blockchain expert</h3>
         <p className="mb-0 text-lg lg:text-xl">Book a 1-on-1 consultation to learn how you can use the world’s most advanced blockchain expertise, technology and ecosystem.</p>
@@ -200,4 +363,28 @@ charge, in the fight against climate change.</p>
     </div>
 </>
   )
+  function Arrow(props: {
+    disabled: boolean
+    left?: boolean
+    onClick: (e: any) => void
+  }) {
+    const disabled = props.disabled ? " arrow--disabled" : ""
+    return (
+      <svg
+        onClick={props.onClick}
+        className={`arrow grants ${
+          props.left ? "arrow--left" : "arrow--right"
+        } ${disabled}`}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+      >
+        {props.left && (
+          <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+        )}
+        {!props.left && (
+          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+        )}
+      </svg>
+    )
+  }
 }

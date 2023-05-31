@@ -7,8 +7,10 @@
 @import 'scroll-style.css';
 @import 'basicLightbox.min.css';
 @import 'menu.css';
+@import 'slider.css';
 @import 'competition.css';
 @import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css';
+@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -27,5 +29,8 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: #fff;
+}
+body:not(.showfocus) .player button {
+  display: none !important;
 }
 #builder-comps {padding-top:100px; padding-bottom:100px; min-height:80vh; background:#fff; margin:0 auto; max-width:1700px}

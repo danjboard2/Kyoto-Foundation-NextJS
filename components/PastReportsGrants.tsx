@@ -1,0 +1,119 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
+import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
+import React, { useState } from "react"
+import 'keen-slider/keen-slider.min.css'
+import { useKeenSlider } from 'keen-slider/react'
+const options = { year: "numeric", month: 'long', day: 'numeric' };
+
+function PastReportsGrants({ articles, options }: {articles: any, options: any}) {
+  const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [loaded, setLoaded] = useState(false)
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+    {
+      breakpoints: {
+        "(min-width: 800px)": {
+          slides: { perView: 2, spacing: 40 },
+        },
+        "(min-width: 1000px)": {
+          slides: { perView: 3, spacing: 40 },
+        },
+        "(min-width: 1200px)": {
+          slides: { perView: 3, spacing: 80 },
+        },
+      },
+      slides: {
+        perView: 1,
+        spacing: 20,
+      },
+      initial: -1,
+      slideChanged(slider) {
+        setCurrentSlide(slider.track.details.rel)
+      },
+      created() {
+        setLoaded(true)
+      },
+    },
+    [
+      // add plugins here
+    ]
+  )
+
+
+    return (
+      <>
+      <section className="flex flex-col w-full items-center justify-center border-2 border-white rounded-xl overflow-hidden relative">
+      { /* This needs to be a carousel - glidejs? */ } {/* We're hiding the first article here so we can display it on it's own at the top */}
+      <div className='flex w-[80%] md:w-[90%] my-10'>
+      <div ref={sliderRef} className="keen-slider flex flex-row h-full">
+      {articles.reverse().map((item:any) => (
+        <div key={item.data.date} className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+        <Link href={`/news/${item.data.handle}`} className="">
+              <Image src={item.data.image} alt={item.data.title} width={730} height={260}/>
+              <div className='mx-4 pt-4'>
+              <p className="text-base text-primary font-semibold"><CalendarMonthOutlinedIcon className='pr-[3px] mb-[3px]'/> {new Date(item.data.date).toLocaleDateString('en-GB', options)}</p>
+              </div>
+              <div className=' mx-4 '>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>{item.data.title}</h2>
+              </div>
+        </Link>
+        </div>
+      ))}
+      </div>
+         {loaded && instanceRef.current &&
+         (
+          <>
+            <Arrow
+              left
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.prev()
+              }
+              disabled={currentSlide === 0}
+            />
+
+            <Arrow
+              onClick={(e: any) =>
+                e.stopPropagation() || instanceRef.current?.next()
+              }
+             disabled={
+                currentSlide ===
+                instanceRef.current.track.details.slides.length - 1
+              } 
+            />
+          </>
+        )
+            }
+      </div>
+
+      </section>
+      </>
+    ); 
+  }
+  function Arrow(props: {
+  disabled: boolean
+  left?: boolean
+  onClick: (e: any) => void
+}) {
+  const disabled = props.disabled ? " arrow--disabled" : ""
+  return (
+    <svg
+      onClick={props.onClick}
+      className={`arrow grants ${
+        props.left ? "arrow--left" : "arrow--right"
+      } ${disabled}`}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      {props.left && (
+        <path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z" />
+      )}
+      {!props.left && (
+        <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+      )}
+    </svg>
+  )
+}
+
+export default PastReportsGrants

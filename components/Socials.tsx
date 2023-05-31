@@ -8,7 +8,7 @@ export default function Socials() {
         <figure><Image className="max-w-[40px] p-2" src="/images/social/discord.png"  width={50} height={50} alt="Social logo"/>
         </figure>
       </a>
-     <a target="_blank" href="https://twitter.com/official_kpio">
+     <a target="_blank" href="https://twitter.com/KyotoRefi">
      <figure>
      <Image className="max-w-[40px] p-2" src="/images/social/twitter.png" width={50} height={50} alt="Social logo"/>
    </figure>
