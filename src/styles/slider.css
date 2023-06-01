@@ -17,7 +17,7 @@ border:1px solid #ECECEC !important;
     margin: -17px auto 0 !important;
     display: table !important;
     width: auto !important;
-    background: #3190E7 !important;
+    background: #476c69 !important;
     padding: 9px 35px !important;
     border-radius: 12px !important;
     text-align: center !important;
@@ -44,6 +44,7 @@ border:1px solid #ECECEC !important;
     transform-style: preserve-3d !important;
     max-width: 90px !important;
     margin: 0 auto 17px !important;
+    margin-top: -44px !important;
 }
 #customers-testimonials.owl-carousel .owl-dots .owl-dot.active span,
 #customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
