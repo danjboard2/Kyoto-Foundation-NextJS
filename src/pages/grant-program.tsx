@@ -114,6 +114,11 @@ charge, in the fight against climate change.</p>
       <div className="w-1/2 px-4 justify-center flex flex-col">
         <h2 className="text-4xl font-bold  mb-6">Planting <span className="italic">the seed</span></h2>
         <p className="mb-10 text-lg lg:text-xl">Be a part of building an inclusive green economy.</p>
+        <p className="mb-6 text-lg lg:text-xl">We invite you to join our vibrant community, where we join forces to forge a generational impact,
+          through the transformative potential of blockchain technology.</p>
+
+          <p className="mb-6 text-lg lg:text-xl">Together, let's shape a sustainable world that transcends boundaries and empowers future
+          generations.</p>
         <a href="#"  className="bg-accent w-auto flex self-start text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Apply now</a>
         </div>
         <div className="w-[650px] h-[500px] ml-8 justify-center flex flex-col overflow-hidden scale-[65%]">
@@ -129,12 +134,6 @@ charge, in the fight against climate change.</p>
         <p className="mb-6 text-lg lg:text-xl">Embracing a unified approach, we back founders on their journey to success by offering comprehensive support that goes beyond simple funding. Leveraging the operational prowess,
           technological expertise, extensive distribution networks, and strategic partnerships within the Kyoto
           Ecosystem, we provide an unparalleled foundation for powerful growth and achievement.</p>
-
-          <p className="mb-6 text-lg lg:text-xl">We invite you to join our vibrant community, where we join forces to forge a generational impact,
-          through the transformative potential of blockchain technology.</p>
-
-          <p className="mb-6 text-lg lg:text-xl">Together, let's shape a sustainable world that transcends boundaries and empowers future
-          generations.</p>
           </div>
           <div className="w-[650px] h-[500px] ml-8 justify-center flex flex-col overflow-hidden scale-[85%]">
             <iframe src="https://player.vimeo.com/video/832056257?h=b810376e63&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1" width="600" height="600" className=" ml-8 pt-12 scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
@@ -143,7 +142,7 @@ charge, in the fight against climate change.</p>
       <section className="w-full flex flex-col  px-6 lg:px-20 xl:px-32 py-20 mt-20 min-h-[500px] bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300">{/* Partner portfolio */}
       <h2 className="text-4xl font-bold mb-10">Our partner <span className="italic">portfolio</span></h2>
         <div className="w-full flex flex-row justify-between">
-        <section className="flex flex-col w-full items-center justify-center border-2 border-white rounded-xl overflow-hidden relative">
+        <section className="flex flex-col w-full items-center justify-center overflow-hidden relative">
       <div className='flex w-[80%] md:w-[90%] my-10'>
       <div ref={sliderRef} className="keen-slider flex flex-row h-full">
         <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
