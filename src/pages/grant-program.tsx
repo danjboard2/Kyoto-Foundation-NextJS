@@ -5,13 +5,13 @@ import Link from 'next/link';
 import dynamic from "next/dynamic";
 // dynamically require owl
 import '@codevadmin/owl.carousel/dist/assets/owl.carousel.css';
-typeof window !== "undefined" ? import('@codevadmin/owl.carousel') : null;
+typeof window !== "undefined" ? require('@codevadmin/owl.carousel') : null;
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import PastReportsGrants from '../../components/PastReportsGrants'
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BuilderComponent, builder, useIsPreviewing, Builder } from '@builder.io/react';
 import { useKeenSlider } from 'keen-slider/react'
 builder.init('05829d3eace9455893e1d144d2d4a91a');
@@ -53,7 +53,7 @@ export async function getStaticProps() {
 export default function Home({links, ref, articles}: {links: any, ref: any, articles:any}) {
 
   if (typeof window !== "undefined") {
-  useLayoutEffect(() => {
+  useEffect(() => {
     $('#customers-testimonials').owlCarousel({
       loop: true,
       center: true,
