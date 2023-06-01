@@ -99,15 +99,15 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     },
     loop: true,
     initial: -1,
-    slideChanged(slider) {
-      setCurrentkeenSlide(slider.track.details.rel)
+    slideChanged(slider2) {
+      setCurrentkeenSlide(slider2.track.details.rel)
     },
     created() {
       setLoaded(true)
     },
   },
   [
-    (slider) => {
+    (slider2) => {
       let timeout: any;
       let mouseOver = false
       function clearNextTimeout() {
@@ -117,23 +117,23 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
         clearTimeout(timeout)
         if (mouseOver) return
         timeout = setTimeout(() => {
-          slider.next()
+          slider2.next()
         }, 1000)
       }
-      slider.on("created", () => {
-        slider.container.addEventListener("mouseover", () => {
+      slider2.on("created", () => {
+        slider2.container.addEventListener("mouseover", () => {
           mouseOver = true
           clearNextTimeout()
         })
-        slider.container.addEventListener("mouseout", () => {
+        slider2.container.addEventListener("mouseout", () => {
           mouseOver = false
           nextTimeout()
         })
         nextTimeout()
       })
-      slider.on("dragStarted", clearNextTimeout)
-      slider.on("animationEnded", nextTimeout)
-      slider.on("updated", nextTimeout)
+      slider2.on("dragStarted", clearNextTimeout)
+      slider2.on("animationEnded", nextTimeout)
+      slider2.on("updated", nextTimeout)
     },
   ]
 )
