@@ -12,6 +12,8 @@ import {
   WhatsappIcon,
   LinkedinShareButton,
   LinkedinIcon,
+  TwitterShareButton,
+  TwitterIcon,
 } from 'next-share';
 const contentUrl= 'https://kyotoprotocol.io/news/';
 
@@ -39,6 +41,10 @@ export default function SocialShare({...data}) {
         url={contentUrl + data?.handle} >
         <LinkedinIcon size={24} round />
       </LinkedinShareButton>
+      <TwitterShareButton
+        url={contentUrl + data?.handle} >
+        <TwitterIcon size={24} round />
+      </TwitterShareButton>
     </>
     );
   }

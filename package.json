@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@builder.io/react": "^2.1.0",
+    "@codevadmin/owl.carousel": "^2.3.6",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",

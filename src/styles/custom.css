@@ -106,13 +106,13 @@ div#scrolling {padding-top: 88px;}
 .arrow.grants {fill:#c7e5d4}
 .arrow--left {
   left: 5px;
-  z-index:20;
+  z-index:10;
 }
 
 .arrow--right {
   left: auto;
   right: 5px;
-  z-index:20;
+  z-index:10;
 }
 
 .arrow--disabled {

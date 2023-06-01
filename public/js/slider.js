@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
     "use strict";
     //  TESTIMONIALS CAROUSEL HOOK
-    $('#customers-testimonials').owlCarousel({
+    jQuery('#customers-testimonials').owlCarousel({
         loop: true,
         center: true,
         items: 3,

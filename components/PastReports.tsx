@@ -45,7 +45,7 @@ function PastReports({ articles, options }: {articles: any, options: any}) {
     return (
       <>
       <section className="flex flex-col w-full items-center justify-center border-2 border-lightgreen rounded-xl overflow-hidden relative">
-      <h2 className="bg-lightgreen  w-full text-left overflow-hidden text-lg lg:text-2xl uppercase font-bold pl-10 py-2 text-primary">Past Reports</h2>
+      <h2 className="bg-lightgreen  w-full text-left overflow-hidden text-lg lg:text-2xl uppercase font-bold pl-10 py-2 text-primary">Past Articles</h2>
       { /* This needs to be a carousel - glidejs? */ } {/* We're hiding the first article here so we can display it on it's own at the top */}
       <div className='flex w-[80%] md:w-[90%] my-10'>
       <div ref={sliderRef} className="keen-slider flex flex-row h-full">

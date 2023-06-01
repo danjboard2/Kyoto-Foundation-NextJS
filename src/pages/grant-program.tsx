@@ -3,9 +3,9 @@ import Head from 'next/head';
 import Script from 'next/script'
 import Link from 'next/link';
 import dynamic from "next/dynamic";
-const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
-  ssr: false,
-});
+// dynamically require owl
+import '@codevadmin/owl.carousel/dist/assets/owl.carousel.css';
+typeof window !== "undefined" ? import('@codevadmin/owl.carousel') : null;
 import 'owl.carousel/dist/assets/owl.carousel.min.css';
 import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 import Footer from '../../components/Footer'
@@ -54,11 +54,31 @@ export default function Home({links, ref, articles}: {links: any, ref: any, arti
 
   if (typeof window !== "undefined") {
   useLayoutEffect(() => {
-   //effect stuff if needed
+    $('#customers-testimonials').owlCarousel({
+      loop: true,
+      center: true,
+      items: 3,
+      margin: 0,
+      autoplay: true,
+      dots:true,
+      autoplayTimeout: 8500,
+      smartSpeed: 450,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1170: {
+          items: 3
+        }
+      }
+  });
     }, []); // <- Scope!
 }
 
-const [currentSlide, setCurrentSlide] = React.useState(0)
+const [currentkeenSlide, setCurrentkeenSlide] = React.useState(0)
 const [loaded, setLoaded] = useState(false)
 const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
   {
@@ -70,28 +90,55 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
         slides: { perView: 3, spacing: 40 },
       },
       "(min-width: 1200px)": {
-        slides: { perView: 4, spacing: 80 },
+        slides: { perView: 5, spacing: 80 },
       },
     },
     slides: {
       perView: 1,
       spacing: 20,
     },
+    loop: true,
     initial: -1,
     slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel)
+      setCurrentkeenSlide(slider.track.details.rel)
     },
     created() {
       setLoaded(true)
     },
   },
   [
-    // add plugins here
+    (slider) => {
+      let timeout: any;
+      let mouseOver = false
+      function clearNextTimeout() {
+        clearTimeout(timeout)
+      }
+      function nextTimeout() {
+        clearTimeout(timeout)
+        if (mouseOver) return
+        timeout = setTimeout(() => {
+          slider.next()
+        }, 1000)
+      }
+      slider.on("created", () => {
+        slider.container.addEventListener("mouseover", () => {
+          mouseOver = true
+          clearNextTimeout()
+        })
+        slider.container.addEventListener("mouseout", () => {
+          mouseOver = false
+          nextTimeout()
+        })
+        nextTimeout()
+      })
+      slider.on("dragStarted", clearNextTimeout)
+      slider.on("animationEnded", nextTimeout)
+      slider.on("updated", nextTimeout)
+    },
   ]
 )
   return (
     <>
-          <Script strategy="afterInteractive" src="/js/slider.js"></Script>
      <Head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <meta name="keywords" content="Kyoto Foundation" />
@@ -105,8 +152,11 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
      <div className=" z-10 pt-[88px] w-full lg:w-1/2 lg:min-w-[800px] flex flex-col justify-center px-10 lg:px-32">
       <h1 className="font-bold text-title mb-10">Empowering <span className="italic">Eco-Warriors</span></h1>
       <p className="mb-6 text-lg lg:text-xl">Kyoto's Ecosystem Grants Program is designed to champion pioneering creators who are leading the
-charge, in the fight against climate change.</p>
-<a href="#" className="bg-accent w-auto flex self-start text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Apply now</a>
+      charge, in the fight against climate change.</p>
+      <div className="flex flex-row">
+      <a href="#" className="bg-accent w-auto flex self-start text-black font-bold py-2 px-8 mr-2 rounded-full uppercase text-sm md:text-base">Apply now</a>
+      <a href="#" className="bg-success w-auto flex self-start text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Learn more</a>
+      </div>
     </div>
       <Image src="/images/logo-window.png" fill style={{objectFit:"contain"}}  alt="Kyoto Foundation Grant Program" className=" z-0 !w-1/2 opacity-50 absolute  !inset-auto !right-[0px] scale-[2]"></Image>
       </section>
@@ -145,44 +195,39 @@ charge, in the fight against climate change.</p>
         <section className="flex flex-col w-full items-center justify-center overflow-hidden relative">
       <div className='flex w-[80%] md:w-[90%] my-10'>
       <div ref={sliderRef} className="keen-slider flex flex-row h-full">
-        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
-              <div className='mx-4 pt-4'>
-              <p className="text-base text-primary font-semibold">Content</p>
-              </div>
+        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
-              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
-              <div className='mx-4 pt-4'>
-              <p className="text-base text-primary font-semibold">Content</p>
-              </div>
+        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
-              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
-              <div className='mx-4 pt-4'>
-              <p className="text-base text-primary font-semibold">Content</p>
-              </div>
+        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
-              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
-              <div className='mx-4 pt-4'>
-              <p className="text-base text-primary font-semibold">Content</p>
-              </div>
+        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
-              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
-              <div className='mx-4 pt-4'>
-              <p className="text-base text-primary font-semibold">Content</p>
-              </div>
+        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
-              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>Partner</h2>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
+              </div>
+        </div>
+        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+              <div className=' mx-4 '>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
+              </div>
+        </div>
+        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+              <div className=' mx-4 '>
+              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
       </div>
@@ -194,7 +239,7 @@ charge, in the fight against climate change.</p>
               onClick={(e: any) =>
                 e.stopPropagation() || instanceRef.current?.prev()
               }
-              disabled={currentSlide === 0}
+              disabled={currentkeenSlide === 0}
             />
 
             <Arrow
@@ -202,7 +247,7 @@ charge, in the fight against climate change.</p>
                 e.stopPropagation() || instanceRef.current?.next()
               }
              disabled={
-                currentSlide ===
+                currentkeenSlide ===
                 instanceRef.current.track.details.slides.length - 1
               } 
             />
@@ -221,7 +266,6 @@ charge, in the fight against climate change.</p>
   <div className="row">
         <div className="w-full">
           <div id="customers-testimonials" className="owl-carousel !block">
-<OwlCarousel center margin={5}>
             <div className="item">
               <div className="shadow-effect">
                 <img className="img-circle rounded-full" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
@@ -257,7 +301,7 @@ charge, in the fight against climate change.</p>
               </div>
               <div className="testimonial-name">- Founder of Something</div>
             </div>
-</OwlCarousel>
+
 </div>
         </div>
       </div>
