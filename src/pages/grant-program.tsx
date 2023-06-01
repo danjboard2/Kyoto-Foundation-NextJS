@@ -113,7 +113,7 @@ charge, in the fight against climate change.</p>
       <section className="w-full flex flex-row px-2 lg:px-16 xl:px-28 min-h-[500px] ">{/* Planting the seed */}
       <div className="w-1/2 px-4 justify-center flex flex-col">
         <h2 className="text-4xl font-bold  mb-6">Planting <span className="italic">the seed</span></h2>
-        <p className="mb-10 text-lg lg:text-xl">Be a part of building an inclusive green economy.</p>
+        <p className="mb-6 text-lg lg:text-xl">Be a part of building an inclusive green economy.</p>
         <p className="mb-6 text-lg lg:text-xl">We invite you to join our vibrant community, where we join forces to forge a generational impact,
           through the transformative potential of blockchain technology.</p>
 
