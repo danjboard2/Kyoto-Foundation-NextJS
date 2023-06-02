@@ -97,6 +97,7 @@ const [sliderRef2, instanceRef2] = useKeenSlider<HTMLDivElement>(
       spacing: 20,
     },
     loop: true,
+    selector: '.keen-slider__slide2',
     initial: -1,
     slideChanged(slider2) {
       setCurrentkeenSlide2(slider2.track.details.rel)
@@ -194,37 +195,37 @@ const [sliderRef2, instanceRef2] = useKeenSlider<HTMLDivElement>(
         <section className="flex flex-col w-full items-center justify-center overflow-hidden relative">
       <div className='flex w-[75%] md:w-[90%] my-10'>
       <div ref={sliderRef2} className="keen-slider2 flex flex-row h-full" id="keen-slider2">
-        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+        <div className='keen-slider__slide2 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
               <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+        <div className='keen-slider__slide2 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
               <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+        <div className='keen-slider__slide2 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
               <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+        <div className='keen-slider__slide2 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
               <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+        <div className='keen-slider__slide2 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
               <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+        <div className='keen-slider__slide2 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
               <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
         </div>
-        <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
+        <div className='keen-slider__slide2 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
               <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
               </div>
