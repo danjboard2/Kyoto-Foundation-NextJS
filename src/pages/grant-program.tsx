@@ -14,7 +14,6 @@ import Partners from '../../components/Partners'
 import PastReportsGrants from '../../components/PastReportsGrants'
 import React, { useEffect, useRef, useState } from 'react';
 import { BuilderComponent, builder, useIsPreviewing, Builder } from '@builder.io/react';
-import { useKeenSlider } from 'keen-slider/react'
 builder.init('05829d3eace9455893e1d144d2d4a91a');
 const articlesPerPage = 30;
 /*

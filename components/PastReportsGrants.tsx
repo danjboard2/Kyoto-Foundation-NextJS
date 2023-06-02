@@ -44,19 +44,22 @@ function PastReportsGrants({ articles, options }: {articles: any, options: any})
 
     return (
       <>
-      <section className="flex flex-col w-full items-center justify-center border-2 border-white rounded-xl overflow-hidden relative">
+      <section className="flex flex-col w-full items-center justify-center overflow-hidden relative">
       { /* This needs to be a carousel - glidejs? */ } {/* We're hiding the first article here so we can display it on it's own at the top */}
       <div className='flex w-[80%] md:w-[90%] my-10'>
       <div ref={sliderRef} className="keen-slider flex flex-row h-full">
-      {articles.reverse().map((item:any) => (
+      {articles.map((item:any) => (
         <div key={item.data.date} className='keen-slider__slide pb-4 bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
         <Link href={`/news/${item.data.handle}`} className="">
               <Image src={item.data.image} alt={item.data.title} width={730} height={260}/>
+              <div className=' border-b-2 border-primary mx-4 '>
+              <h2 className='text-primary text-xl uppercase font-bold mt-1 py-2 text-left'>{item.data.title}</h2>
+              </div>
               <div className='mx-4 pt-4'>
               <p className="text-base text-primary font-semibold"><CalendarMonthOutlinedIcon className='pr-[3px] mb-[3px]'/> {new Date(item.data.date).toLocaleDateString('en-GB', options)}</p>
-              </div>
-              <div className=' mx-4 '>
-              <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-left'>{item.data.title}</h2>
+              <p className="text-base text-primary font-semibold"><WatchLaterOutlinedIcon  className='pr-[3px] mb-[3px]'/> {item.data.mins} MIN READ</p>
+              <p className='text-lg text-primary font-semibold pt-4 pb-4'>{item.data.blurb}</p>
+              <p className='text-primary text-base'>Read More<ChevronRightOutlinedIcon className='pl-[0px] mb-[1px] h-[18px] w-[18px]'/></p>
               </div>
         </Link>
         </div>
