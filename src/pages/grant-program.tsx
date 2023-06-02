@@ -80,7 +80,7 @@ export default function Home({links, ref, articles}: {links: any, ref: any, arti
 
 const [currentkeenSlide, setCurrentkeenSlide] = React.useState(0)
 const [loaded, setLoaded] = useState(false)
-const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+const [sliderRef2, instanceRef2] = useKeenSlider<HTMLDivElement>(
   {
     breakpoints: {
       "(min-width: 800px)": {
@@ -160,9 +160,9 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     </div>
       <Image src="/images/logo-window.png" fill style={{objectFit:"contain"}}  alt="Kyoto Foundation Grant Program" className=" z-0 !w-1/2 opacity-50 absolute  !inset-auto !right-[0px] scale-[2]"></Image>
       </section>
-      <section className="w-full flex flex-row px-2 lg:px-16 xl:px-28 min-h-[500px] ">{/* Planting the seed */}
-      <div className="w-1/2 px-4 justify-center flex flex-col">
-        <h2 className="text-4xl font-bold  mb-6">Planting <span className="italic">the seed</span></h2>
+      <section className="w-full flex flex-col lg:flex-row px-2 lg:px-16 xl:px-28 min-h-[500px] ">{/* Planting the seed */}
+      <div className="w-full lg:w-1/2 px-4 justify-center flex flex-col">
+        <h2 className="text-4xl font-bold  mb-6 mt-6">Planting <span className="italic">the seed</span></h2>
         <p className="mb-6 text-lg lg:text-xl">Be a part of building an inclusive green economy.</p>
         <p className="mb-6 text-lg lg:text-xl">We invite you to join our vibrant community, where we join forces to forge a generational impact,
           through the transformative potential of blockchain technology.</p>
@@ -171,13 +171,13 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
           generations.</p>
         <a href="#"  className="bg-accent w-auto flex self-start text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Apply now</a>
         </div>
-        <div className="w-[650px] h-[500px] ml-8 justify-center flex flex-col overflow-hidden scale-[65%]">
+        <div className="w-full lg:max-w-[650px] h-[500px] lg:ml-8 justify-center flex flex-col overflow-hidden scale-[65%]">
         <script src="https://player.vimeo.com/api/player.js"></script>
-        <iframe src="https://player.vimeo.com/video/832069314?h=d90940c6ad&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1" width="600" height="600"  className=" ml-2 pt-12 scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
+        <iframe src="https://player.vimeo.com/video/832069314?h=d90940c6ad&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1"   className=" lg:ml-2 pt-12 lg:scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
         </div>
       </section>
-      <section className="w-full flex flex-row  px-2 lg:px-16 xl:px-28 min-h-[500px] ">{/* About */}
-      <div className="w-1/2 px-4 justify-center flex flex-col">
+      <section className="w-full flex flex-col lg:flex-row  px-2 lg:px-16 xl:px-28 min-h-[500px] ">{/* About */}
+      <div className="w-full lg:w-1/2 px-4 justify-center flex flex-col">
       <h2 className="text-4xl font-bold mb-6">About</h2>
         <p className="mb-6 text-lg lg:text-xl">At Kyoto, we are passionately committed to getting trailblazing teams on-chain, who share our unwavering dedication to sustainability, to build on the Kyoto network. We believe that early-stage investments, across various web3 domains, can pave the way for a greener future.</p>
 
@@ -185,16 +185,16 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
           technological expertise, extensive distribution networks, and strategic partnerships within the Kyoto
           Ecosystem, we provide an unparalleled foundation for powerful growth and achievement.</p>
           </div>
-          <div className="w-[650px] h-[500px] ml-8 justify-center flex flex-col overflow-hidden scale-[85%]">
-            <iframe src="https://player.vimeo.com/video/832056257?h=b810376e63&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1" width="600" height="600" className=" ml-8 pt-12 scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
+          <div className="w-full lg:max-w-[650px] h-[500px] lg:ml-8 justify-center flex flex-col overflow-hidden scale-[85%]">
+            <iframe src="https://player.vimeo.com/video/832056257?h=b810376e63&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1" className=" lg:ml-8 pt-12 lg:scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
         </div>
       </section>
       <section className="w-full flex flex-col  px-6 lg:px-20 xl:px-32 py-20 mt-20 min-h-[500px] bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300">{/* Partner portfolio */}
       <h2 className="text-4xl font-bold mb-10">Our partner <span className="italic">portfolio</span></h2>
         <div className="w-full flex flex-row justify-between">
         <section className="flex flex-col w-full items-center justify-center overflow-hidden relative">
-      <div className='flex w-[80%] md:w-[90%] my-10'>
-      <div ref={sliderRef} className="keen-slider flex flex-row h-full">
+      <div className='flex w-[75%] md:w-[90%] my-10'>
+      <div ref={sliderRef2} className="keen-slider flex flex-row h-full">
         <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
               <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
@@ -231,24 +231,24 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
               </div>
         </div>
       </div>
-      {loaded && instanceRef.current &&
+      {loaded && instanceRef2.current &&
          (
           <>
             <Arrow
               left
               onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.prev()
+                e.stopPropagation() || instanceRef2.current?.prev()
               }
               disabled={currentkeenSlide === 0}
             />
 
             <Arrow
               onClick={(e: any) =>
-                e.stopPropagation() || instanceRef.current?.next()
+                e.stopPropagation() || instanceRef2.current?.next()
               }
              disabled={
                 currentkeenSlide ===
-                instanceRef.current.track.details.slides.length - 1
+                instanceRef2.current.track.details.slides.length - 1
               } 
             />
           </>
@@ -260,7 +260,7 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
       </section>
       <section className="w-full flex flex-col px-6 lg:px-20 xl:px-32 py-10 pb-28 mt-20 min-h-[500px] place-content-center">{/* What founders say about us */}
       <h2 className="text-4xl font-bold mb-10">What founders say <span className="italic">about us</span></h2>
-      <div className="w-full flex flex-row justify-between items-center">
+      <div className="w-full flex flex-row justify-between items-center overflow-hidden">
       <section className="testimonials w-full">
 	<div className="w-full block">
   <div className="row">
@@ -309,17 +309,17 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     </section>
         </div>
       </section>
-      <section className="bg-secondarylt flex flex-row w-full py-6 shadow-inner shadow-gray-800"> {/* gain competitive advantage */ }
-      <div className="w-1/2 flex items-center justify-center">
-        <p className="flex font-medium ml-32 text-white text-lg lg:text-xl">Gain a competitive edge in the market and unlock new, green possibilities for your business, via the Kyoto blockchain today.</p>
+      <section className="bg-secondarylt flex flex-col lg:flex-row w-full py-6 shadow-inner shadow-gray-800"> {/* gain competitive advantage */ }
+      <div className="w-full lg:w-1/2 flex items-center justify-center">
+        <p className="flex font-medium m-6 lg:ml-32 text-white text-lg lg:text-xl">Gain a competitive edge in the market and unlock new, green possibilities for your business, via the Kyoto blockchain today.</p>
       </div>
-      <div className="w-1/2 flex items-center justify-center">
+      <div className="w-full lg:w-1/2 flex items-center justify-center">
       <a href="#" className="bg-accent w-auto inline-flex center text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Apply now</a>
       </div>
       </section>
       <section className="w-full flex flex-col px-6 lg:px-20 xl:px-32 pt-20 min-h-[500px]"> {/* our team of eco-warriors */}
       <h2 className="text-4xl font-bold mb-10">Our team <span className="italic">of Eco-Warriors</span></h2>
-      <div className="flex w-full flex-row justify-between">
+      <div className="flex w-full flex-row justify-between overflow-hidden">
         <div className="flex flex-row w-[49.5%] justify-between flex-wrap">
           <div className="w-[32%]">
             <Image src="https://placehold.co/400x400/png" height={300} width={300} className="self-center mb-2" alt="Team"></Image>
@@ -393,12 +393,12 @@ const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
       <PastReportsGrants articles={articles} options/>
       </div>
       </section>
-      <section className="w-full flex flex-row px-6 lg:px-20 xl:px-32 py-10 mt-20 mb-20 bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300 border-b-[30px] border-secondarylt"> {/* Connect with a blockchain expert */}
-      <div className="flex w-1/2 flex-col">
+      <section className="w-full flex flex-col lg:flex-row px-6 lg:px-20 xl:px-32 py-10 mt-20 mb-20 bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300 border-b-[30px] border-secondarylt"> {/* Connect with a blockchain expert */}
+      <div className="flex w-full mb-6 lg:w-1/2 flex-col">
       <h3 className="text-3xl font-bold mb-4">Connect with a blockchain expert</h3>
         <p className="mb-0 text-lg lg:text-xl">Book a 1-on-1 consultation to learn how you can use the world’s most advanced blockchain expertise, technology and ecosystem.</p>
         </div>
-        <div className="flex w-1/2 items-center justify-center">
+        <div className="flex w-full lg:w-1/2 items-center justify-center">
         <a href="#" className="bg-accent w-auto inline-flex center text-black font-bold py-2 px-8 rounded-full uppercase text-sm md:text-base">Let's talk</a>
         </div>
       </section>

@@ -25,7 +25,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+* {
+  @apply text-primary;
+}
 body {
   color: rgb(var(--foreground-rgb));
   background: #fff;
