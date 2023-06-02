@@ -77,9 +77,8 @@ export default function Home({links, ref, articles}: {links: any, ref: any, arti
   });
     }, []); // <- Scope!
 }
-
-const [currentkeenSlide, setCurrentkeenSlide] = React.useState(0)
-const [loaded, setLoaded] = useState(false)
+const [currentkeenSlide2, setCurrentkeenSlide2] = React.useState(0)
+const [loaded2, setLoaded2] = useState(false)
 const [sliderRef2, instanceRef2] = useKeenSlider<HTMLDivElement>(
   {
     breakpoints: {
@@ -100,33 +99,33 @@ const [sliderRef2, instanceRef2] = useKeenSlider<HTMLDivElement>(
     loop: true,
     initial: -1,
     slideChanged(slider2) {
-      setCurrentkeenSlide(slider2.track.details.rel)
+      setCurrentkeenSlide2(slider2.track.details.rel)
     },
     created() {
-      setLoaded(true)
+      setLoaded2(true)
     },
   },
   [
     (slider2) => {
-      let timeout: any;
-      let mouseOver = false
+      let timeout2: any;
+      let mouseOver2 = false
       function clearNextTimeout() {
-        clearTimeout(timeout)
+        clearTimeout(timeout2)
       }
       function nextTimeout() {
-        clearTimeout(timeout)
-        if (mouseOver) return
-        timeout = setTimeout(() => {
+        clearTimeout(timeout2)
+        if (mouseOver2) return
+        timeout2 = setTimeout(() => {
           slider2.next()
         }, 1000)
       }
       slider2.on("created", () => {
         slider2.container.addEventListener("mouseover", () => {
-          mouseOver = true
+          mouseOver2 = true
           clearNextTimeout()
         })
         slider2.container.addEventListener("mouseout", () => {
-          mouseOver = false
+          mouseOver2 = false
           nextTimeout()
         })
         nextTimeout()
@@ -194,7 +193,7 @@ const [sliderRef2, instanceRef2] = useKeenSlider<HTMLDivElement>(
         <div className="w-full flex flex-row justify-between">
         <section className="flex flex-col w-full items-center justify-center overflow-hidden relative">
       <div className='flex w-[75%] md:w-[90%] my-10'>
-      <div ref={sliderRef2} className="keen-slider flex flex-row h-full">
+      <div ref={sliderRef2} className="keen-slider2 flex flex-row h-full" id="keen-slider2">
         <div className='keen-slider__slide bg-lightgreen rounded-2xl my-5 border-4 border-lightgreen overflow-hidden relative'>
               <div className=' mx-4 '>
               <h2 className='text-primary text-lg uppercase font-bold mt-1 py-2 text-center'>Partner logo</h2>
@@ -231,7 +230,7 @@ const [sliderRef2, instanceRef2] = useKeenSlider<HTMLDivElement>(
               </div>
         </div>
       </div>
-      {loaded && instanceRef2.current &&
+      {loaded2 && instanceRef2.current &&
          (
           <>
             <Arrow
@@ -239,7 +238,7 @@ const [sliderRef2, instanceRef2] = useKeenSlider<HTMLDivElement>(
               onClick={(e: any) =>
                 e.stopPropagation() || instanceRef2.current?.prev()
               }
-              disabled={currentkeenSlide === 0}
+              disabled={currentkeenSlide2 === 0}
             />
 
             <Arrow
@@ -247,7 +246,7 @@ const [sliderRef2, instanceRef2] = useKeenSlider<HTMLDivElement>(
                 e.stopPropagation() || instanceRef2.current?.next()
               }
              disabled={
-                currentkeenSlide ===
+                currentkeenSlide2 ===
                 instanceRef2.current.track.details.slides.length - 1
               } 
             />
