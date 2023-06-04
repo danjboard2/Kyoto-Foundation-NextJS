@@ -113,7 +113,7 @@ export default function Home({links, ref, articles}: {links: any, ref: any, arti
         </div>
         <div className="w-full lg:max-w-[650px] h-[500px] lg:ml-8 justify-center flex flex-col overflow-hidden scale-[65%]">
         <script src="https://player.vimeo.com/api/player.js"></script>
-        <iframe src="https://player.vimeo.com/video/832069314?h=d90940c6ad&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1"   className=" lg:ml-2 pt-12 lg:scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
+        <iframe src="https://player.vimeo.com/video/832069314?h=d90940c6ad&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1&controls=0"   className=" lg:ml-2 pt-12 lg:scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
         </div>
       </section>
       <section className="w-full flex flex-col lg:flex-row  px-2 lg:px-16 xl:px-28 min-h-[500px] ">{/* About */}
@@ -126,7 +126,7 @@ export default function Home({links, ref, articles}: {links: any, ref: any, arti
           Ecosystem, we provide an unparalleled foundation for powerful growth and achievement.</p>
           </div>
           <div className="w-full lg:max-w-[650px] h-[500px] lg:ml-8 justify-center flex flex-col overflow-hidden scale-[85%]">
-            <iframe src="https://player.vimeo.com/video/832056257?h=b810376e63&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1" className=" lg:ml-8 pt-12 lg:scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
+            <iframe src="https://player.vimeo.com/video/832056257?h=b810376e63&badge=0&autoplay=1&autopause=0&loop=1&title=0&byline=0&portrait=0&muted=1&controls=0" className=" lg:ml-8 pt-12 lg:scale-125 h-full overflow-hidden" frameBorder="0" allow="autoplay"></iframe>
         </div>
       </section>
       <section className="w-full flex flex-col  px-6 lg:px-20 xl:px-32 py-20 mt-20 min-h-[500px] bg-lightsuccess place-content-center shadow-inner-lg shadow-gray-300">{/* Partner portfolio */}
