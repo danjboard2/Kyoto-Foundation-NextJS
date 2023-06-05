@@ -149,35 +149,35 @@ export default function Home({links, ref, articles}: {links: any, ref: any, arti
           <div id="customers-testimonials" className="owl-carousel !block">
             <div className="item">
               <div className="shadow-effect">
-                <img className="img-circle rounded-full" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <img className="img-circle rounded-full" src="https://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non rhoncus dolor, ac dignissim nulla. In id eleifend metus, non varius ipsum. Aliquam efficitur ex et nisl eleifend venenatis in ut elit. Ut auctor ipsum ac orci mollis congue. Ut rutrum, lorem in eleifend tristique, quam ligula aliquam ex, iaculis hendrerit felis orci eget quam. Integer varius ligula risus. Integer aliquam vehicula diam a feugiat. Nulla turpis arcu, posuere sit amet viverra ac, dictum nec orci.</p>
               </div>
               <div className="testimonial-name">- Founder of Something</div>
             </div>
             <div className="item">
               <div className="shadow-effect">
-                <img className="img-circle rounded-full" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <img className="img-circle rounded-full" src="https://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non rhoncus dolor, ac dignissim nulla. In id eleifend metus, non varius ipsum. Aliquam efficitur ex et nisl eleifend venenatis in ut elit. Ut auctor ipsum ac orci mollis congue. Ut rutrum, lorem in eleifend tristique, quam ligula aliquam ex, iaculis hendrerit felis orci eget quam. Integer varius ligula risus. Integer aliquam vehicula diam a feugiat.</p>
               </div>
               <div className="testimonial-name">- Founder Name</div>
             </div>
             <div className="item">
               <div className="shadow-effect">
-                <img className="img-circle rounded-full" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <img className="img-circle rounded-full" src="https://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
                 <p>Maecenas ut enim ornare, iaculis sapien sed, faucibus odio. Fusce suscipit leo quis euismod faucibus. Nullam pretium dignissim quam ac ullamcorper. Integer et risus eu lacus dignissim ultricies. Maecenas luctus nisl leo, in blandit risus euismod sit amet. Nunc molestie fermentum lacus eu fringilla. Nulla mattis orci lorem, quis aliquam nunc eleifend in.</p>
               </div>
               <div className="testimonial-name">- Founder of Something</div>
             </div>
             <div className="item">
               <div className="shadow-effect">
-                <img className="img-circle rounded-full" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <img className="img-circle rounded-full" src="https://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
                 <p>Integer vulputate ante metus. Integer eu diam tortor. In pharetra sed nulla vel malesuada. Aliquam eu sodales lectus, ac tempor tellus. Praesent eu lorem mollis tortor aliquam laoreet. Ut fermentum est tristique diam semper maximus. Donec volutpat nulla ut ligula aliquet, feugiat tempus nulla porta.</p>
               </div>
               <div className="testimonial-name">- Founder Name</div>
             </div>
             <div className="item">
               <div className="shadow-effect">
-                <img className="img-circle rounded-full" src="http://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
+                <img className="img-circle rounded-full" src="https://themes.audemedia.com/html/goodgrowth/images/testimonial3.jpg" alt=""/>
                 <p>Integer vulputate ante metus. Integer eu diam tortor. In pharetra sed nulla vel malesuada. Aliquam eu sodales lectus, ac tempor tellus. Praesent eu lorem mollis tortor aliquam laoreet.</p>
               </div>
               <div className="testimonial-name">- Founder of Something</div>
