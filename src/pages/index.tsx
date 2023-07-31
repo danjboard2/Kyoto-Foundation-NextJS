@@ -140,7 +140,7 @@ export default function Home({links, ref}: {links: any, ref: any}) {
   return (
     <>
       <Script strategy="afterInteractive" src="https://player.vimeo.com/api/player.js"></Script>
-      <Script src="//code.tidio.co/zjoi0ajovrui5txvitkzweydom4tlltp.js" async></Script>
+      <Script src="//code.tidio.co/yv3lfhhlp2bjbhqsi8ul5jzu3gpiq9kt.js" async></Script>
      <Head>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <meta name="keywords" content="Kyoto Foundation" />
